@@ -4,6 +4,5 @@ import org.springframework.data.repository.CrudRepository;
 
 import fp.coffeeshopmanagement.model.ChiTietHopDongCungCapNguyenLieu;
 
-public interface ChiTietHopDongCungCapNguyenLieuRepository extends CrudRepository<ChiTietHopDongCungCapNguyenLieu, Integer>{
-
+public interface ChiTietHopDongCungCapNguyenLieuRepository extends CrudRepository<ChiTietHopDongCungCapNguyenLieu, Integer> {
 }
