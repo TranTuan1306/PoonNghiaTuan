@@ -18,7 +18,7 @@ public class DanhMucThucUongServiceImpl implements DanhMucThucUongService {
 		return (List<DanhMucThucUong>) dmtuRepository.findAll();
 	}
 
-	public DanhMucThucUong getDanhMucThucUongById(long id) {
+	public DanhMucThucUong getDanhMucThucUongById(int id) {
 		// TODO Auto-generated method stub
 		return dmtuRepository.findById(id).get();
 	}
@@ -28,7 +28,7 @@ public class DanhMucThucUongServiceImpl implements DanhMucThucUongService {
 		dmtuRepository.save(dmtu);
 	}
 
-	public void deleteDanhMucThucUong(long id) {
+	public void deleteDanhMucThucUong(int id) {
 		// TODO Auto-generated method stub
 		dmtuRepository.deleteById(id);
 	}

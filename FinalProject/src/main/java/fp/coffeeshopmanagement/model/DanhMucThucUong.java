@@ -8,17 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="danhmucthucuong", schema="SYS")
+@Table(name="danhmucthucuong")
 public class DanhMucThucUong {
 	@Id
 	@Column(name="maloaithucuong")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long iMaLoaiThucUong;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int iMaLoaiThucUong;
 	
 	@Column(name="tenloaithucuong")
 	private String sTenLoaiThucUong;
 
-	public long getiMaLoaiThucUong() {
+	public int getiMaLoaiThucUong() {
 		return iMaLoaiThucUong;
 	}
 

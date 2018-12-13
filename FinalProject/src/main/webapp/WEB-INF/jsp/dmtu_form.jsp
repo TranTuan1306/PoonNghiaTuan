@@ -20,7 +20,7 @@
    <form:hidden path="iMaLoaiThucUong"/>
    <div class="form-group">
     <label>Tên loại</label>
-    <form:input path="title" cssClass="form-control" id="sTenLoaiThucUong" />
+    <form:input path="sTenLoaiThucUong" cssClass="form-control" id="sTenLoaiThucUong" />
    </div>
    <button type="submit" class="btn btn-primary">Lưu</button>
   </form:form>

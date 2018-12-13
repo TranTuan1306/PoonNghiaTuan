@@ -32,9 +32,7 @@ public class DanhMucThucUongController {
 	public ModelAndView addDanhMucThucUong() {
 		ModelAndView model = new ModelAndView();
 
-		DanhMucThucUong dmtu = new DanhMucThucUong();
-		dmtu.setsTenLoaiThucUong("default");
-		dmtu.setiMaLoaiThucUong(0);
+		DanhMucThucUong dmtu = new DanhMucThucUong();	
 		model.addObject("dmtuForm", dmtu);
 		model.setViewName("dmtu_form");
 
@@ -43,7 +41,7 @@ public class DanhMucThucUongController {
 
 
 	@RequestMapping(value="/updatedmtu/{id}", method=RequestMethod.GET)
-	public ModelAndView editDanhMucThucUong(@PathVariable long id) {
+	public ModelAndView editDanhMucThucUong(@PathVariable int id) {
 		ModelAndView model = new ModelAndView();
 
 		DanhMucThucUong dmtu = dmtuService.getDanhMucThucUongById(id);
@@ -54,14 +52,14 @@ public class DanhMucThucUongController {
 	}
 
 	@RequestMapping(value="/savedmtu", method=RequestMethod.POST)
-	public ModelAndView save(@ModelAttribute("articleForm") DanhMucThucUong dmtu) {
+	public ModelAndView save(@ModelAttribute("dmtuForm") DanhMucThucUong dmtu) {
 		dmtuService.saveOrUpdate(dmtu);
 
 		return new ModelAndView("redirect:/danhmucthucuong/list");
 	}
 	
 	 @RequestMapping(value="/deletedmtu/{id}", method=RequestMethod.GET)
-	 public ModelAndView delete(@PathVariable("id") long id) {
+	 public ModelAndView delete(@PathVariable("id") int id) {
 	  dmtuService.deleteDanhMucThucUong(id);
 	  
 	  return new ModelAndView("redirect:/danhmucthucuong/list");
