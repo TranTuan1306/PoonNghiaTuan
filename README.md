@@ -1,5 +1,5 @@
 # Coffee Shop Management
-Final Project of Web Program
-MEMBER:   Nguyen Duy Poon
-          Nguyen Trung Nghia
-          Tran Van Nghia
+Final Project of Web Program </br>
+MEMBER: </br>   Nguyen Duy Poon </br>
+          Nguyen Trung Nghia </br>
+          Tran Van Nghia </br>
