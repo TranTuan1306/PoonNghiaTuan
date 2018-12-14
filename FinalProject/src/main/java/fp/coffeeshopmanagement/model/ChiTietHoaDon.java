@@ -3,29 +3,31 @@ package fp.coffeeshopmanagement.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="chitiethoadon")
-public class ChiTietHoaDon {
+@IdClass(ChiTietHoaDonPK.class)
+public class ChiTietHoaDon{
 	@Id
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinTable(name="hoadon", joinColumns = @JoinColumn(name="mahd", referencedColumnName="mahd"))
-	//@Column(name="mahd")
+	@Column(name="mahd")
 	private int iMaHD;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinTable(name="thucuong", joinColumns = @JoinColumn(name="mathucuong", referencedColumnName="mathucuong"))
-	//@Column(name="mathucuong")
+	@Id
+	@Column(name="mathucuong")
 	private int iMaThucUong;
 	
 	@Column(name="soluong")
 	private int iSoLuong;
 
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = HoaDon.class, fetch = FetchType.LAZY)
+	@JoinColumn(name="mahd", foreignKey = @ForeignKey(name="fk_chitiethoadon_hoadon"))
 	public int getiMaHD() {
 		return iMaHD;
 	}
@@ -34,6 +36,8 @@ public class ChiTietHoaDon {
 		this.iMaHD = iMaHD;
 	}
 
+	@ManyToOne(cascade = CascadeType.ALL, targetEntity = ThucUong.class, fetch =  FetchType.LAZY)
+	@JoinColumn(name="mathucuong", foreignKey = @ForeignKey(name="fk_chitiethoadon_thucuong"))
 	public int getiMaThucUong() {
 		return iMaThucUong;
 	}

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fp.coffeeshopmanagement.model.ChiTietHoaDon;
+import fp.coffeeshopmanagement.model.HoaDon;
 import fp.coffeeshopmanagement.repository.ChiTietHoaDonRepository;
+import fp.coffeeshopmanagement.repository.HoaDonRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)

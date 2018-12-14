@@ -19,8 +19,9 @@ public class ChiTietHoaDonController {
 	@Autowired
 	ChiTietHoaDonService cthdService;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public ModelAndView list(@PathVariable int idHD) {
+	@RequestMapping(value="/list", method=RequestMethod.GET)
+	public ModelAndView list() {
+		int idHD=1;
 		ModelAndView model = new ModelAndView("cthd_list");
 		List<ChiTietHoaDon> cthdList = cthdService.getChiTietHoaDonById(idHD);
 		model.addObject("cthdList", cthdList);
@@ -55,7 +56,7 @@ public class ChiTietHoaDonController {
 	public ModelAndView save(@ModelAttribute("cthdForm") ChiTietHoaDon cthd) {
 		cthdService.saveOrUpdate(cthd);
 
-		return new ModelAndView("redirect:/chitiethoadon/");
+		return new ModelAndView("redirect:/chitiethoadon/list");
 	}
 
 //	@RequestMapping(value="/deletecthd/{id}", method=RequestMethod.GET)

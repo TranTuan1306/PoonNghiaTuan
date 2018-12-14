@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class CongViec {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="macv")
 	private int iMaCV;
 	
 	@Column(name="tencv")
@@ -28,11 +29,7 @@ public class CongViec {
 	public String getsTenCV() {
 		return sTenCV;
 	}
-
-	public void setsTenCV(String iTenCV) {
-		this.sTenCV = iTenCV;
-	}
-
+	
 	public CongViec() {
 		super();
 		// TODO Auto-generated constructor stub

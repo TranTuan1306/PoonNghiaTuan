@@ -8,7 +8,7 @@ import fp.coffeeshopmanagement.model.DanhMucThucUong;
 import fp.coffeeshopmanagement.repository.DanhMucThucUongRepository;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class DanhMucThucUongServiceImpl implements DanhMucThucUongService {
 	@Autowired
 	DanhMucThucUongRepository dmtuRepository;

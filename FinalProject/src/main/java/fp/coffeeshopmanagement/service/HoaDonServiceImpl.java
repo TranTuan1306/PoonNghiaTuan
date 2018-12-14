@@ -10,7 +10,7 @@ import fp.coffeeshopmanagement.model.HoaDon;
 import fp.coffeeshopmanagement.repository.HoaDonRepository;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class HoaDonServiceImpl implements HoaDonService{
 	@Autowired
 	HoaDonRepository hdRepository;

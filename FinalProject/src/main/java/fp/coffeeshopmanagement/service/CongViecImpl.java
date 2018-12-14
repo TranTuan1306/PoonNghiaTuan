@@ -10,7 +10,7 @@ import fp.coffeeshopmanagement.model.CongViec;
 import fp.coffeeshopmanagement.repository.CongViecRepository;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class CongViecImpl implements CongViecService{
 	@Autowired
 	CongViecRepository cvRepository;

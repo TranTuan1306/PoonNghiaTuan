@@ -10,7 +10,7 @@ import fp.coffeeshopmanagement.model.HopDongCungCapNguyenLieu;
 import fp.coffeeshopmanagement.repository.HopDongCungCapNguyenLieuRepository;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class HopDongCungCapNguyenLieuServiceImpl implements HopDongCungCapNguyenLieuService{
 	@Autowired
 	HopDongCungCapNguyenLieuRepository hdccnlRepository;
