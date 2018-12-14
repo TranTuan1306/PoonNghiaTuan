@@ -2,21 +2,18 @@ package fp.coffeeshopmanagement.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="chitiethopdongcungcapnguyenlieu")
 public class ChiTietHopDongCungCapNguyenLieu {
-	@Id
-	@Column(name="MaHopDong")
+	@Column(name="mahopdong")
 	private int iMaHopDong;
 	
-	@Id
-	@Column(name="MaNguyenLieu")
+	@Column(name="manguyenlieu")
 	private int iMaNguyenLieu;
 	
-	@Column(name="SoLuong")
+	@Column(name="soluong")
 	private int iSoLuong;
 
 	public int getiMaHopDong() {

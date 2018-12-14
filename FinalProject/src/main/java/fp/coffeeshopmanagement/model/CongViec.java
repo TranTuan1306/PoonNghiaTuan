@@ -14,8 +14,8 @@ public class CongViec {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iMaCV;
 	
-	@Column(name="TenCV")
-	private String sTenCV;
+	@Column(name="tencv")
+	private int iTenCV;
 
 	public int getiMaCV() {
 		return iMaCV;
@@ -25,12 +25,12 @@ public class CongViec {
 		this.iMaCV = iMaCV;
 	}
 
-	public String getsTenCV() {
-		return sTenCV;
+	public int getiTenCV() {
+		return iTenCV;
 	}
 
-	public void setsTenCV(String sTenCV) {
-		this.sTenCV = sTenCV;
+	public void setiTenCV(int iTenCV) {
+		this.iTenCV = iTenCV;
 	}
 
 	public CongViec() {

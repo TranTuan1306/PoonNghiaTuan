@@ -1,6 +1,7 @@
 package fp.coffeeshopmanagement.model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,20 +9,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
-@Table(name="MaHopDong")
+@Table(name="hopdongcungcapnguyenlieu")
 public class HopDongCungCapNguyenLieu {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iMaHopDong;
 	
-	@Column(name="NgayCungCap")
-	private Timestamp tsNgayCungCap;
+	@Column(name="ngaycungcap")
+	@DateTimeFormat(pattern="dd-MM-yyyy")
+	private Date dNgayCungCap;
 	
-	@Column(name="MaNhaCungCap")
+	@Column(name="manhacungcap")
 	private int iMaNhaCungCap;
 	
-	@Column(name="MaNhanVien")
+	@Column(name="manhanvien")
 	private int iMaNhanVien;
 
 	public int getiMaHopDong() {
@@ -32,12 +36,12 @@ public class HopDongCungCapNguyenLieu {
 		this.iMaHopDong = iMaHopDong;
 	}
 
-	public Timestamp getTsNgayCungCap() {
-		return tsNgayCungCap;
+	public Date getdNgayCungCap() {
+		return dNgayCungCap;
 	}
 
-	public void setTsNgayCungCap(Timestamp tsNgayCungCap) {
-		this.tsNgayCungCap = tsNgayCungCap;
+	public void setdNgayCungCap(Date dNgayCungCap) {
+		this.dNgayCungCap = dNgayCungCap;
 	}
 
 	public int getiMaNhaCungCap() {

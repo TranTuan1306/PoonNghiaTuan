@@ -1,6 +1,7 @@
 package fp.coffeeshopmanagement.model;
 
-import java.sql.Timestamp;
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,23 +9,26 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
-@Table(name="HoaDon")
+@Table(name="hoadon")
 public class HoaDon {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iMaHD;
 	
-	@Column(name="ThoiDiem")
-	private Timestamp tsThoiDiem;
+	@Column(name="thoidiem")
+	@DateTimeFormat(pattern="dd-MM-yyyy")
+	private Date dThoiDiem;
 	
-	@Column(name="MaKH")
+	@Column(name="makh")
 	private int iMaKH;
 	
-	@Column(name="MaNV")
+	@Column(name="manv")
 	private int iMaNV;
 	
-	@Column(name="LoaiHoaDon")
+	@Column(name="loaihoadon")
 	private int iLoaiHoaDon;
 
 	public int getiMaHD() {
@@ -35,12 +39,12 @@ public class HoaDon {
 		this.iMaHD = iMaHD;
 	}
 
-	public Timestamp getTsThoiDiem() {
-		return tsThoiDiem;
+	public Date getdThoiDiem() {
+		return dThoiDiem;
 	}
 
-	public void setDtThoiDiem(Timestamp tsThoiDiem) {
-		this.tsThoiDiem = tsThoiDiem;
+	public void setdThoiDiem(Date dThoiDiem) {
+		this.dThoiDiem = dThoiDiem;
 	}
 
 	public int getiMaKH() {

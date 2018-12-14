@@ -11,10 +11,11 @@ import javax.persistence.Table;
 @Table(name="danhmucthucuong")
 public class DanhMucThucUong {
 	@Id
+	//@Column(name="maloaithucuong")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int iMaLoaiThucUong;
 	
-	@Column(name="TenLoaiThucUong")
+	@Column(name="tenloaithucuong")
 	private String sTenLoaiThucUong;
 
 	public int getiMaLoaiThucUong() {
@@ -37,6 +38,7 @@ public class DanhMucThucUong {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 }

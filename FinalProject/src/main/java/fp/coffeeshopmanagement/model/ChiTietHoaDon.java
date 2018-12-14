@@ -2,21 +2,18 @@ package fp.coffeeshopmanagement.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="chitiethoadon")
 public class ChiTietHoaDon {
-	@Id
-	@Column(name="MaHD")
+	@Column(name="mahd")
 	private int iMaHD;
 	
-	@Id
-	@Column(name="MaThucUong")
+	@Column(name="mathucuong")
 	private int iMaThucUong;
 	
-	@Column(name="SoLuong")
+	@Column(name="soluong")
 	private int iSoLuong;
 
 	public int getiMaHD() {
@@ -42,11 +39,11 @@ public class ChiTietHoaDon {
 	public void setiSoLuong(int iSoLuong) {
 		this.iSoLuong = iSoLuong;
 	}
-	
+
 	public ChiTietHoaDon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 }
-
-		
