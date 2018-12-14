@@ -1,17 +1,27 @@
 package fp.coffeeshopmanagement.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="chitiethopdongcungcapnguyenlieu")
 public class ChiTietHopDongCungCapNguyenLieu {
-	
-	@Column(name="mahopdong")
+	@Id
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinTable(name="hopdongcungcapnguyenlieu", joinColumns = @JoinColumn(name="mahd", referencedColumnName="mahd"))
+	//@Column(name="mahopdong")
 	private int iMaHopDong;
 	
-	@Column(name="manguyenlieu")
+	@Id
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinTable(name="nguyenlieu", joinColumns = @JoinColumn(name="manguyenlieu", referencedColumnName="manguyenlieu"))
+	//@JoinColumn(name="manguyenlieu")
 	private int iMaNguyenLieu;
 	
 	@Column(name="soluong")
