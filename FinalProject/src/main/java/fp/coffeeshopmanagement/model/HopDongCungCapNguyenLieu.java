@@ -2,11 +2,15 @@ package fp.coffeeshopmanagement.model;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -22,10 +26,14 @@ public class HopDongCungCapNguyenLieu {
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date dNgayCungCap;
 	
-	@Column(name="manhacungcap")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinTable(name="nhacungcap", joinColumns = @JoinColumn(name="manhacungcap", referencedColumnName="manhacungcap"))
+	//@Column(name="manhacungcap")
 	private int iMaNhaCungCap;
 	
-	@Column(name="manhanvien")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinTable(name="nhanvien", joinColumns = @JoinColumn(name="manhanvien", referencedColumnName="manv"))
+	//@Column(name="manhanvien")
 	private int iMaNhanVien;
 
 	public int getiMaHopDong() {
