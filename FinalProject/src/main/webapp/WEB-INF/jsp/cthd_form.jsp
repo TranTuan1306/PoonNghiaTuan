@@ -7,7 +7,7 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <title>Danh Mục Thức Uống</title>
+ <title>Chi Tiết Hóa Đơn</title>
  <link href="../../webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
  <script src="../../webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
  <script src="../../webjars/jquery/3.0.0/js/jquery.min.js"></script>
@@ -15,12 +15,16 @@
 <body>
  <div class="container">
   <spring:url value="/danhmucthucuong/savedmtu" var="saveURL" />
-  <h2>Danh Mục Thức Uống</h2>
-  <form:form modelAttribute="dmtuForm" method="post" action="${saveURL }" cssClass="form" >
-   <form:hidden path="iMaLoaiThucUong"/>
+  <h2>Chi Tiết Hóa Đơn</h2>
+  <form:form modelAttribute="cthdForm" method="post" action="${saveURL }" cssClass="form" >
+   <form:hidden path="iMaHD"/>
    <div class="form-group">
-    <label>Tên loại</label>
-    <form:input path="sTenLoaiThucUong" cssClass="form-control" id="sTenLoaiThucUong" />
+    <label>Mã thức uống</label>
+    <form:input path="iMaThucUong" cssClass="form-control" id="iMaThucUong" />
+   </div>
+   <div class="form-group">
+    <label>Số lượng</label>
+    <form:input path="iSoLuong" cssClass="form-control" id="iSoLuong" />
    </div>
    <button type="submit" class="btn btn-primary">Lưu</button>
   </form:form>

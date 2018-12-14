@@ -15,7 +15,7 @@ public class CongViec {
 	private int iMaCV;
 	
 	@Column(name="tencv")
-	private int iTenCV;
+	private String sTenCV;
 
 	public int getiMaCV() {
 		return iMaCV;
@@ -25,12 +25,12 @@ public class CongViec {
 		this.iMaCV = iMaCV;
 	}
 
-	public int getiTenCV() {
-		return iTenCV;
+	public String getsTenCV() {
+		return sTenCV;
 	}
 
-	public void setiTenCV(int iTenCV) {
-		this.iTenCV = iTenCV;
+	public void setsTenCV(String iTenCV) {
+		this.sTenCV = iTenCV;
 	}
 
 	public CongViec() {

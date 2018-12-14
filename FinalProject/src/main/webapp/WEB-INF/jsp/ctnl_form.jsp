@@ -7,7 +7,7 @@
 <html>
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- <title>Danh Mục Thức Uống</title>
+ <title>Chi Tiết Nguyên Liệu</title>
  <link href="../../webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
  <script src="../../webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
  <script src="../../webjars/jquery/3.0.0/js/jquery.min.js"></script>
@@ -15,12 +15,12 @@
 <body>
  <div class="container">
   <spring:url value="/danhmucthucuong/savedmtu" var="saveURL" />
-  <h2>Danh Mục Thức Uống</h2>
-  <form:form modelAttribute="dmtuForm" method="post" action="${saveURL }" cssClass="form" >
-   <form:hidden path="iMaLoaiThucUong"/>
+  <h2>Chi Tiết Nguyên Liệu</h2>
+  <form:form modelAttribute="cthdForm" method="post" action="${saveURL }" cssClass="form" >
+   <form:hidden path="iMaThucUong"/>
    <div class="form-group">
-    <label>Tên loại</label>
-    <form:input path="sTenLoaiThucUong" cssClass="form-control" id="sTenLoaiThucUong" />
+    <label>Mã nguyên liệu</label>
+    <form:input path="iMaNguyenLieu" cssClass="form-control" id="iMaNguyenLieu" />
    </div>
    <button type="submit" class="btn btn-primary">Lưu</button>
   </form:form>

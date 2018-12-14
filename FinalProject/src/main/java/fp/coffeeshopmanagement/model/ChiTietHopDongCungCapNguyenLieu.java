@@ -18,7 +18,6 @@ public class ChiTietHopDongCungCapNguyenLieu {
 	//@Column(name="mahopdong")
 	private int iMaHopDong;
 	
-	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinTable(name="nguyenlieu", joinColumns = @JoinColumn(name="manguyenlieu", referencedColumnName="manguyenlieu"))
 	//@JoinColumn(name="manguyenlieu")

@@ -10,19 +10,19 @@ import fp.coffeeshopmanagement.model.ChiTietHopDongCungCapNguyenLieu;
 import fp.coffeeshopmanagement.repository.ChiTietHopDongCungCapNguyenLieuRepository;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 public class ChiTietHopDongCungCapNguyenLieuServiceImpl implements ChiTietHopDongCungCapNguyenLieuService {
 	@Autowired
 	ChiTietHopDongCungCapNguyenLieuRepository cthdccnlRepository;
 
-	public List<ChiTietHopDongCungCapNguyenLieu> getAllChiTietHopDongCungCapNguyenLieu() {
-		// TODO Auto-generated method stub
-		return (List<ChiTietHopDongCungCapNguyenLieu>)cthdccnlRepository.findAll();
-	}
+//	public List<ChiTietHopDongCungCapNguyenLieu> getAllChiTietHopDongCungCapNguyenLieu() {
+//		// TODO Auto-generated method stub
+//		return (List<ChiTietHopDongCungCapNguyenLieu>)cthdccnlRepository.findAll();
+//	}
 
-	public ChiTietHopDongCungCapNguyenLieu getChiTietHopDongCungCapNguyenLieuById(int id) {
+	public List<ChiTietHopDongCungCapNguyenLieu> getChiTietHopDongCungCapNguyenLieuById(int idHopDong) {
 		// TODO Auto-generated method stub
-		return cthdccnlRepository.findById(id).get();
+		return (List<ChiTietHopDongCungCapNguyenLieu>) cthdccnlRepository.findById(idHopDong).get();
 	}
 
 	public void saveOrUpdate(ChiTietHopDongCungCapNguyenLieu cthdccnl) {
@@ -30,10 +30,10 @@ public class ChiTietHopDongCungCapNguyenLieuServiceImpl implements ChiTietHopDon
 		cthdccnlRepository.save(cthdccnl);
 	}
 
-	public void deleteChiTietHopDongCungCapNguyenLieu(int id) {
-		// TODO Auto-generated method stub
-		cthdccnlRepository.deleteById(id);
-	}
+//	public void deleteChiTietHopDongCungCapNguyenLieu(int id) {
+//		// TODO Auto-generated method stub
+//		cthdccnlRepository.deleteById(id);
+//	}
 	
 	
 }

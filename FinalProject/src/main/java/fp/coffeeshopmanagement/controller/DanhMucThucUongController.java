@@ -19,7 +19,7 @@ public class DanhMucThucUongController {
 	@Autowired
 	DanhMucThucUongService dmtuService;
 
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("dmtu_list");
 		List<DanhMucThucUong> dmtuList = dmtuService.getAllDanhMucThucUong();
@@ -55,14 +55,14 @@ public class DanhMucThucUongController {
 	public ModelAndView save(@ModelAttribute("dmtuForm") DanhMucThucUong dmtu) {
 		dmtuService.saveOrUpdate(dmtu);
 
-		return new ModelAndView("redirect:/danhmucthucuong/list");
+		return new ModelAndView("redirect:/danhmucthucuong/");
 	}
-	
-	 @RequestMapping(value="/deletedmtu/{id}", method=RequestMethod.GET)
-	 public ModelAndView delete(@PathVariable("id") int id) {
-	  dmtuService.deleteDanhMucThucUong(id);
-	  
-	  return new ModelAndView("redirect:/danhmucthucuong/list");
-	 }
+
+	@RequestMapping(value="/deletedmtu/{id}", method=RequestMethod.GET)
+	public ModelAndView delete(@PathVariable("id") int id) {
+		dmtuService.deleteDanhMucThucUong(id);
+
+		return new ModelAndView("redirect:/danhmucthucuong/");
+	}
 
 }
