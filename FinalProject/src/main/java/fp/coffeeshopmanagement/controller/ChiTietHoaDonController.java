@@ -18,10 +18,11 @@ import fp.coffeeshopmanagement.service.ChiTietHoaDonService;
 public class ChiTietHoaDonController {
 	@Autowired
 	ChiTietHoaDonService cthdService;
-	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
-	public ModelAndView list() {
-		int idHD=1;
+	public int temp = -1;
+
+	@RequestMapping(value="/list/{idHD}", method=RequestMethod.GET)
+	public ModelAndView list(@PathVariable int idHD) {
+		temp = idHD;
 		ModelAndView model = new ModelAndView("cthd_list");
 		List<ChiTietHoaDon> cthdList = cthdService.getChiTietHoaDonById(idHD);
 		model.addObject("cthdList", cthdList);
@@ -32,37 +33,20 @@ public class ChiTietHoaDonController {
 	@RequestMapping(value="/addcthd", method=RequestMethod.GET)
 	public ModelAndView addChiTietHoaDon() {
 		ModelAndView model = new ModelAndView();
+		ChiTietHoaDon cthd = new ChiTietHoaDon();
 
-		ChiTietHoaDon cthd = new ChiTietHoaDon();	
 		model.addObject("cthdForm", cthd);
 		model.setViewName("cthd_form");
 
 		return model;
 	}
 
-
-//	@RequestMapping(value="/updatecthd/{id}", method=RequestMethod.GET)
-//	public ModelAndView editChiTietHoaDon(@PathVariable int id) {
-//		ModelAndView model = new ModelAndView();
-//
-//		ChiTietHoaDon cthd = cthdService.getChiTietHoaDonById(id);
-//		model.addObject("cthdForm", cthd);
-//		model.setViewName("cthd_form");
-//
-//		return model;
-//	}
-
 	@RequestMapping(value="/savecthd", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cthdForm") ChiTietHoaDon cthd) {
+		cthd.setiMaHD(temp);
 		cthdService.saveOrUpdate(cthd);
 
-		return new ModelAndView("redirect:/chitiethoadon/list");
+		return new ModelAndView("redirect:list/"+temp);
 	}
 
-//	@RequestMapping(value="/deletecthd/{id}", method=RequestMethod.GET)
-//	public ModelAndView delete(@PathVariable("id") int id) {
-//		cthdService.deleteChiTietHoaDon(id);
-//
-//		return new ModelAndView("redirect:/chitiethoadon/");
-//	}
 }

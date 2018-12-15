@@ -33,7 +33,7 @@
       <td>${hd.iMaNV }</td>
       <td>${hd.iLoaiHoaDon }
       <td>
-      <spring:url value="/chitiethoadon/${hd.iMaHD }" var="chitiethoadonURL" />
+      <spring:url value="/chitiethoadon/list/${hd.iMaHD }" var="chitiethoadonURL" />
        <a class="btn btn-success" href="${chitiethoadonURL }" role="button" >Detail</a>
        <spring:url value="/hoadon/updatehd/${hd.iMaHD }" var="updateURL" />
        <a class="btn btn-primary" href="${updateURL }" role="button" >Update</a>

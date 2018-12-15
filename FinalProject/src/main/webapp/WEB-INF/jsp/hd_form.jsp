@@ -21,7 +21,7 @@
    <form:hidden path="dThoiDiem"/>
    <div class="form-group">
     <label>Mã khách hàng</label>
-    <form:input path="iMaKH" cssClass="form-control" id="iMaKH" />
+    <form:input path="iMaKH" cssClass="form-con trol" id="iMaKH" />
    </div>
    <div class="form-group">
     <label>Mã nhân viên</label>

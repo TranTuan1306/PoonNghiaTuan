@@ -14,7 +14,7 @@
 </head>
 <body>
  <div class="container">
-  <spring:url value="/danhmucthucuong/savedmtu" var="saveURL" />
+  <spring:url value="/chitiethoadon/savecthd" var="saveURL" />
   <h2>Chi Tiết Hóa Đơn</h2>
   <form:form modelAttribute="cthdForm" method="post" action="${saveURL }" cssClass="form" >
    <form:hidden path="iMaHD"/>
