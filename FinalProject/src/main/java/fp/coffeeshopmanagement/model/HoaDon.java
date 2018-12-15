@@ -1,7 +1,7 @@
 package fp.coffeeshopmanagement.model;
 
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -15,19 +15,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name="hoadon")
 public class HoaDon{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="mahd")
 	private int iMaHD;
 	
 	@Column(name="thoidiem")
-	@DateTimeFormat(pattern="dd-MM-yyyy")
-	
-	private Date dThoiDiem;
+	private Date dThoiDiem = new Date();
 	
 	@Column(name="makh")
 	private int iMaKH;
@@ -45,15 +42,15 @@ public class HoaDon{
 	public void setiMaHD(int iMaHD) {
 		this.iMaHD = iMaHD;
 	}
-
+	
 	public Date getdThoiDiem() {
 		return dThoiDiem;
 	}
 
-	public void setdThoiDiem(Date dThoiDiem) {
-		this.dThoiDiem = dThoiDiem;
-	}
-	
+//	public void setdThoiDiem(Date dThoiDiem) {
+//		this.dThoiDiem = dThoiDiem;
+//	}
+//	
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = KhachHang.class, fetch = FetchType.LAZY)
 	@JoinColumn(name="makh", foreignKey = @ForeignKey(name="fk_hoadon_khachhang"))
 	public int getiMaKH() {
