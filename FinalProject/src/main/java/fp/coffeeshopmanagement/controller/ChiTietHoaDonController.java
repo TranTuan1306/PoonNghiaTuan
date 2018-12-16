@@ -18,7 +18,7 @@ import fp.coffeeshopmanagement.service.ChiTietHoaDonService;
 public class ChiTietHoaDonController {
 	@Autowired
 	ChiTietHoaDonService cthdService;
-	public int temp = -1;
+	int temp = -1;
 
 	@RequestMapping(value="/list/{idHD}", method=RequestMethod.GET)
 	public ModelAndView list(@PathVariable int idHD) {

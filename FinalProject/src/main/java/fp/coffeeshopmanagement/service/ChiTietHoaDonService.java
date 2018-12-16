@@ -4,7 +4,7 @@ import java.util.List;
 import fp.coffeeshopmanagement.model.ChiTietHoaDon;
 
 public interface ChiTietHoaDonService {
-	List<ChiTietHoaDon> getAllChiTietHoaDon();
+	//List<ChiTietHoaDon> getAllChiTietHoaDon();
 
 	List<ChiTietHoaDon> getChiTietHoaDonById(int idHD);
 

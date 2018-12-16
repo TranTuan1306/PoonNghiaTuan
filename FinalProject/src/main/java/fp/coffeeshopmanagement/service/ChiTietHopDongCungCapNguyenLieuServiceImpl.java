@@ -22,7 +22,7 @@ public class ChiTietHopDongCungCapNguyenLieuServiceImpl implements ChiTietHopDon
 
 	public List<ChiTietHopDongCungCapNguyenLieu> getChiTietHopDongCungCapNguyenLieuById(int idHopDong) {
 		// TODO Auto-generated method stub
-		return (List<ChiTietHopDongCungCapNguyenLieu>) cthdccnlRepository.findById(idHopDong).get();
+		return  cthdccnlRepository.findAllByIdHopDong(idHopDong);
 	}
 
 	public void saveOrUpdate(ChiTietHopDongCungCapNguyenLieu cthdccnl) {

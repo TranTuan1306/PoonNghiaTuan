@@ -18,9 +18,11 @@ import fp.coffeeshopmanagement.service.ChiTietHopDongCungCapNguyenLieuService;
 public class ChiTietHopDongCungCapNguyenLieuController {
 	@Autowired
 	ChiTietHopDongCungCapNguyenLieuService cthdccnlService;
+	int temp = -1;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="/list/{idHopDong}", method=RequestMethod.GET)
 	public ModelAndView list(@PathVariable int idHopDong) {
+		temp = idHopDong;
 		ModelAndView model = new ModelAndView("cthdccnl_list");
 		List<ChiTietHopDongCungCapNguyenLieu> cthdccnlList = cthdccnlService.getChiTietHopDongCungCapNguyenLieuById(idHopDong);
 		model.addObject("cthdccnlList", cthdccnlList);
@@ -41,8 +43,9 @@ public class ChiTietHopDongCungCapNguyenLieuController {
 	
 	@RequestMapping(value="/savecthdccnl", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cthdccnlForm") ChiTietHopDongCungCapNguyenLieu cthdccnl) {
+		cthdccnl.setiMaHopDong(temp);
 		cthdccnlService.saveOrUpdate(cthdccnl);
 
-		return new ModelAndView("redirect:/chitiethopdongcungcapnguyenlieu/");
+		return new ModelAndView("redirect:list/"+temp);
 	}
 }

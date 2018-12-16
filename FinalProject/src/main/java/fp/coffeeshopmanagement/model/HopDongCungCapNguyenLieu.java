@@ -1,6 +1,6 @@
 package fp.coffeeshopmanagement.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,8 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 @Entity
 @Table(name="hopdongcungcapnguyenlieu")
 public class HopDongCungCapNguyenLieu {
@@ -25,10 +23,9 @@ public class HopDongCungCapNguyenLieu {
 	private int iMaHopDong;
 	
 	@Column(name="ngaycungcap")
-	@DateTimeFormat(pattern="dd-MM-yyyy")
-	private Date dNgayCungCap;
+	private Date dNgayCungCap = new Date();
 	
-	@Column(name="manhaccungcap")
+	@Column(name="manhacungcap")
 	private int iMaNhaCungCap;
 	
 	@Column(name="manhanvien")
@@ -46,9 +43,9 @@ public class HopDongCungCapNguyenLieu {
 		return dNgayCungCap;
 	}
 
-	public void setdNgayCungCap(Date dNgayCungCap) {
-		this.dNgayCungCap = dNgayCungCap;
-	}
+//	public void setdNgayCungCap(Date dNgayCungCap) {
+//		this.dNgayCungCap = dNgayCungCap;
+//	}
 
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhaCungCap.class, fetch = FetchType.LAZY)
 	@JoinColumn(name="manhacungcap", foreignKey = @ForeignKey(name="fk_hopdongcungcapnguyenlieu_nhacungcap"))
