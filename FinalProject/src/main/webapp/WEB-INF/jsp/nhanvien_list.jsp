@@ -45,13 +45,7 @@
 						<td>${nv.sMatKhau }
 						<td>${nv.iMaCV }
 						<td>${nv.bTrangThai }
-						<td><spring:url
-								value="/nhanvien/updatenv/${nv.iMaNV }"
-								var="updateURL" /> <a class="btn btn-primary"
-							href="${updateURL }" role="button">Update</a> <spring:url
-								value="/nhanvien/deletenv/${nv.iMaNV }" var="deleteURL" />
-							<a class="btn btn-danger" href="${deleteURL }" role="button">Delete</a>
-						</td>
+						
 					</tr>
 				</c:forEach>
 			</tbody>

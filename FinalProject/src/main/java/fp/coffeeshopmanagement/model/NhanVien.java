@@ -24,6 +24,14 @@ public class NhanVien {
 	@Column(name="manv")
 	private int iMaNV;
 	
+	public int getiMaNV() {
+		return iMaNV;
+	}
+
+	public void setiMaNV(int iMaNV) {
+		this.iMaNV = iMaNV;
+	}
+
 	@Column(name="hoten")
 	private String sHoTen;	
 	
@@ -55,17 +63,27 @@ public class NhanVien {
 	@Column(name="trangthai")
 	private boolean bTrangThai;
 	
-	public int getiMaNhanVien() {
-		return iMaNV;
-	}
-
-	public void setiMaNhanVien(int iMaNhanVien) {
-		this.iMaNV = iMaNhanVien;
-	}
+//	public int getiMaNhanVien() {
+//		return iMaNV;
+//	}
+//
+//	public void setiMaNhanVien(int iMaNV) {
+//		this.iMaNV = iMaNV;
+//	}
+	
+	
 
 	public String getsHoTen() {
 		return sHoTen;
 	}
+
+//	public int getiMaNV() {
+//		return iMaNV;
+//	}
+//
+//	public void setiMaNV(int iMaNV) {
+//		this.iMaNV = iMaNV;
+//	}
 
 	public void setsHoTen(String sHoTen) {
 		this.sHoTen = sHoTen;
