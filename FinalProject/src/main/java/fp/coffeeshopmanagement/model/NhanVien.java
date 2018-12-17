@@ -54,13 +54,13 @@ public class NhanVien {
 	
 	@Column(name="trangthai")
 	private boolean bTrangThai;
-	
-	public int getiMaNhanVien() {
+
+	public int getiMaNV() {
 		return iMaNV;
 	}
 
-	public void setiMaNhanVien(int iMaNhanVien) {
-		this.iMaNV = iMaNhanVien;
+	public void setiMaNV(int iMaNV) {
+		this.iMaNV = iMaNV;
 	}
 
 	public String getsHoTen() {
