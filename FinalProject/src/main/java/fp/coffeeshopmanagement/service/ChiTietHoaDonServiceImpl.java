@@ -1,7 +1,5 @@
 package fp.coffeeshopmanagement.service;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import fp.coffeeshopmanagement.model.ChiTietHoaDon;
-import fp.coffeeshopmanagement.model.HoaDon;
 import fp.coffeeshopmanagement.repository.ChiTietHoaDonRepository;
-import fp.coffeeshopmanagement.repository.HoaDonRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
@@ -19,10 +15,10 @@ public class ChiTietHoaDonServiceImpl implements ChiTietHoaDonService{
 	@Autowired
 	ChiTietHoaDonRepository cthdRepository;
 
-	public List<ChiTietHoaDon> getAllChiTietHoaDon() {
-		// TODO Auto-generated method stub
-		return (List<ChiTietHoaDon>) cthdRepository.findAll();
-	}
+//	public List<ChiTietHoaDon> getAllChiTietHoaDon() {
+//		// TODO Auto-generated method stub
+//		return (List<ChiTietHoaDon>) cthdRepository.findAll();
+//	}
 
 	public List<ChiTietHoaDon> getChiTietHoaDonById(int idHD) {
 		// TODO Auto-generated method stub

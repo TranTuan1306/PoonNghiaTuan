@@ -12,27 +12,23 @@ import fp.coffeeshopmanagement.repository.NhaCungCapRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class NhaCungCapServiceImpl {
+public class NhaCungCapServiceImpl implements NhaCungCapService {
 	@Autowired
 	NhaCungCapRepository nhacungcapRepository;
 
 	public List<NhaCungCap> getAllNhaCungCap() {
-		// TODO Auto-generated method stub
 		return (List<NhaCungCap>) nhacungcapRepository.findAll();
 	}
 
 	public NhaCungCap getNhaCungCapById(int id) {
-		// TODO Auto-generated method stub
 		return nhacungcapRepository.findById(id).get();
 	}
 
 	public void saveOrUpdate(NhaCungCap nhacungcap) {
-		// TODO Auto-generated method stub
 		nhacungcapRepository.save(nhacungcap);
 	}
 
 	public void deleteNhaCungCap(int id) {
-		// TODO Auto-generated method stub
 		nhacungcapRepository.deleteById(id);
 	}
 }

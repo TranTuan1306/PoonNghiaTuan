@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Danh Sách Thức Uống</title>
+<title>Nguyên Liệu</title>
 <link href="../../webjars/bootstrap/4.1.3/css/bootstrap.min.css"
 	rel="stylesheet" />
 <script src="../../webjars/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -14,35 +14,35 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Danh Sách Thức Uống</h2>
+		<h2>Danh Sách Nguyên Liệu</h2>
 		<table class="table table-striped">
 			<thead>
-				<th scope="row">Mã Thức Uống</th>
-				<th scope="row">Tên Thức Uống</th>
+				<th scope="row">Mã Nguyên Liệu</th>
+				<th scope="row">Tên Nguyên Liệu</th>
+				<th scope="row">Đơn Vị</th>
 				<th scope="row">Đơn Giá</th>
-				<th scope="row">Mã Loại Thức Uống</th>
-				<th scope="row">Thao tác</th>
-
+				<th scope="row">Thao Tác</th>
+				
 			</thead>
 			<tbody>
-				<c:forEach items="${thucuongList }" var="tu">
+				<c:forEach items="${nguyenlieuList }" var="nl">
 					<tr>
-						<td>${tu.iMaThucUong }</td>
-						<td>${tu.sTenThucUong}</td>
-						<td>${tu.iGiaThanh }</td>
-						<td>${tu.iMaLoaiThucUong }
-						<td><spring:url value="/thucuong/updatethucuong/${tu.iMaThucUong }"
+						<td>${nl.iMaNguyenLieu }</td>
+						<td>${nl.sTenNguyenLieu}</td>
+						<td>${nl.sDonVi }</td>
+						<td>${nl.iGiaTien }
+						<td><spring:url value="/nguyenlieu/updatenguyenlieu/${nl.iMaNguyenLieu }"
 								var="updateURL" /> <a class="btn btn-primary"
 							href="${updateURL }" role="button">Update</a> <spring:url
-								value="/thucuong/deletethucuong/${tu.iMaThucUong }" var="deleteURL" /> <a
+								value="/nguyenlieu/deletenguyenlieu/${nl.iMaNguyenLieu }" var="deleteURL" /> <a
 							class="btn btn-danger" href="${deleteURL }" role="button">Delete</a>
 						</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-	<spring:url value="/thucuong/addthucuong/" var="addURL" />
-    <a class="btn btn-primary" href="${addURL }" role="button" >Thêm Thức Uống Mới</a>
+		<spring:url value="/nguyenlieu/addnguyenlieu/" var="addURL" />
+    	<a class="btn btn-primary" href="${addURL }" role="button" >Thêm Nguyên Liệu Mới</a>
 	</div>
 </body>
 </html>

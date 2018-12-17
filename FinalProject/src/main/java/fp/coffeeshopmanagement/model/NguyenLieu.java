@@ -18,7 +18,7 @@ public class NguyenLieu {
 	@Column(name="tennguyenlieu")
 	private String sTenNguyenLieu;
 	
-	@Column(name="madonvi")
+	@Column(name="donvi")
 	private String sDonVi;
 	
 	@Column(name="giatien")

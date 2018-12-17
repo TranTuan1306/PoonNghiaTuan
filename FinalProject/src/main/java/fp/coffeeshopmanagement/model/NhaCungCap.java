@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class NhaCungCap {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="manhaccungcap")
+	@Column(name="manhacungcap")
 	private int iMaNhaCungCap;
 	
 	public int getiMaNhaCungCap() {

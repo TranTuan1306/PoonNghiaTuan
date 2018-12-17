@@ -39,7 +39,7 @@ public class NhanVienController {
 		return model;
 	}
 	
-	@RequestMapping(value="/updatenhanvien/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/updatenv/{id}", method=RequestMethod.GET)
 	public ModelAndView editNhanVien(@PathVariable int id) {
 		ModelAndView model = new ModelAndView();
 

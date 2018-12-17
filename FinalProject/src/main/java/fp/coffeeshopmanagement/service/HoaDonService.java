@@ -5,11 +5,11 @@ import java.util.List;
 import fp.coffeeshopmanagement.model.HoaDon;
 
 public interface HoaDonService {
-	public List<HoaDon> getAllHoaDon();
+	List<HoaDon> getAllHoaDon();
 	
-	public HoaDon getHoaDonById(int id);
+	HoaDon getHoaDonById(int id);
 	
-	public void saveOrUpdate(HoaDon hd);
+	void saveOrUpdate(HoaDon hd);
 	
-	public void deleteHoaDon(int id);
+	void deleteHoaDon(int id);
 }

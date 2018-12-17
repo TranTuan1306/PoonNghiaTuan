@@ -1,6 +1,7 @@
+
 package fp.coffeeshopmanagement.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,7 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="nhanvien")
@@ -24,14 +24,6 @@ public class NhanVien {
 	@Column(name="manv")
 	private int iMaNV;
 	
-	public int getiMaNV() {
-		return iMaNV;
-	}
-
-	public void setiMaNV(int iMaNV) {
-		this.iMaNV = iMaNV;
-	}
-
 	@Column(name="hoten")
 	private String sHoTen;	
 	
@@ -45,7 +37,7 @@ public class NhanVien {
 	private String sDiaChi;
 	
 	@Column(name="ngaybatdau")
-	@DateTimeFormat(pattern="dd-MM-yyyy")
+
 	private Date dThoiDiem;
 	
 	@Column(name="luong")
@@ -62,28 +54,18 @@ public class NhanVien {
 	
 	@Column(name="trangthai")
 	private boolean bTrangThai;
-	
-//	public int getiMaNhanVien() {
-//		return iMaNV;
-//	}
-//
-//	public void setiMaNhanVien(int iMaNV) {
-//		this.iMaNV = iMaNV;
-//	}
-	
-	
+
+	public int getiMaNV() {
+		return iMaNV;
+	}
+
+	public void setiMaNV(int iMaNV) {
+		this.iMaNV = iMaNV;
+	}
 
 	public String getsHoTen() {
 		return sHoTen;
 	}
-
-//	public int getiMaNV() {
-//		return iMaNV;
-//	}
-//
-//	public void setiMaNV(int iMaNV) {
-//		this.iMaNV = iMaNV;
-//	}
 
 	public void setsHoTen(String sHoTen) {
 		this.sHoTen = sHoTen;
@@ -115,10 +97,6 @@ public class NhanVien {
 
 	public Date getdThoiDiem() {
 		return dThoiDiem;
-	}
-
-	public void setdThoiDiem(Date dThoiDiem) {
-		this.dThoiDiem = dThoiDiem;
 	}
 
 	public int getiLuong() {
@@ -165,3 +143,4 @@ public class NhanVien {
 
 		
 }
+
