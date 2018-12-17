@@ -2,6 +2,7 @@ package fp.coffeeshopmanagement.controller;
 
 import java.util.List;
 
+import fp.coffeeshopmanagement.model.HoaDon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import fp.coffeeshopmanagement.service.ChiTietHoaDonService;
 public class ChiTietHoaDonController {
 	@Autowired
 	ChiTietHoaDonService cthdService;
+
 	int temp = -1;
 
 	@RequestMapping(value="/list/{idHD}", method=RequestMethod.GET)
@@ -34,7 +36,6 @@ public class ChiTietHoaDonController {
 	public ModelAndView addChiTietHoaDon() {
 		ModelAndView model = new ModelAndView();
 		ChiTietHoaDon cthd = new ChiTietHoaDon();
-
 		model.addObject("cthdForm", cthd);
 		model.setViewName("cthd_form");
 
@@ -43,10 +44,10 @@ public class ChiTietHoaDonController {
 
 	@RequestMapping(value="/savecthd", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cthdForm") ChiTietHoaDon cthd) {
-		cthd.setiMaHD(temp);
+		cthd.setiMaHD(new HoaDon(temp));
 		cthdService.saveOrUpdate(cthd);
 
-		return new ModelAndView("redirect:list/"+temp);
+			return new ModelAndView("redirect:list/"+temp);
 	}
 
 }

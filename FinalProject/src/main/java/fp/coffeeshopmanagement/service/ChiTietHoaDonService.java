@@ -2,6 +2,7 @@ package fp.coffeeshopmanagement.service;
 
 import java.util.List;
 import fp.coffeeshopmanagement.model.ChiTietHoaDon;
+import fp.coffeeshopmanagement.model.HoaDon;
 
 public interface ChiTietHoaDonService {
 	//List<ChiTietHoaDon> getAllChiTietHoaDon();

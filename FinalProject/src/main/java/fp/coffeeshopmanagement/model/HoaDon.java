@@ -85,6 +85,8 @@ public class HoaDon{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+	public HoaDon(int iMaHD) {
+		this.iMaHD = iMaHD;
+	}
 }

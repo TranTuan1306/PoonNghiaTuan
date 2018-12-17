@@ -1,6 +1,6 @@
 package fp.coffeeshopmanagement.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -37,8 +37,7 @@ public class NhanVien {
 	private String sDiaChi;
 	
 	@Column(name="ngaybatdau")
-	@DateTimeFormat(pattern="dd-MM-yyyy")
-	private Date dThoiDiem;
+	private Date dThoiDiem = new Date();
 	
 	@Column(name="luong")
 	private int iLuong;
@@ -97,10 +96,6 @@ public class NhanVien {
 
 	public Date getdThoiDiem() {
 		return dThoiDiem;
-	}
-
-	public void setdThoiDiem(Date dThoiDiem) {
-		this.dThoiDiem = dThoiDiem;
 	}
 
 	public int getiLuong() {
