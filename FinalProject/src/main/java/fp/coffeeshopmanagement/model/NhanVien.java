@@ -21,8 +21,8 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class NhanVien {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="manhanvien")
-	private int iMaNhanVien;
+	@Column(name="manv")
+	private int iMaNV;
 	
 	@Column(name="hoten")
 	private String sHoTen;	
@@ -52,15 +52,15 @@ public class NhanVien {
 	@Column(name="macv")
 	private int iMaCV;
 	
-	@Column(name="loaitaikhoan")
+	@Column(name="trangthai")
 	private boolean bTrangThai;
 	
 	public int getiMaNhanVien() {
-		return iMaNhanVien;
+		return iMaNV;
 	}
 
 	public void setiMaNhanVien(int iMaNhanVien) {
-		this.iMaNhanVien = iMaNhanVien;
+		this.iMaNV = iMaNhanVien;
 	}
 
 	public String getsHoTen() {

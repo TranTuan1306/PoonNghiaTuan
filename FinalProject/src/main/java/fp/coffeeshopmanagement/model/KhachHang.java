@@ -99,4 +99,9 @@ public class KhachHang {
 	public void setsHoTen(String sHoTen) {
 		this.sHoTen = sHoTen;
 	}
+	
+	public KhachHang() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 }

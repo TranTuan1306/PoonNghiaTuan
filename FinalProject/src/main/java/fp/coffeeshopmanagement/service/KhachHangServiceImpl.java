@@ -25,9 +25,9 @@ public class KhachHangServiceImpl implements KhachHangService {
 		return khachhangRepository.findById(id).get();
 	}
 
-	public void saveOrUpdate(KhachHang cthd) {
+	public void saveOrUpdate(KhachHang kh) {
 		// TODO Auto-generated method stub
-		khachhangRepository.save(cthd);
+		khachhangRepository.save(kh);
 	}
 
 	public void deleteKhachHang(int id) {
