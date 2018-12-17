@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class WelcomeController {
+	
 	@RequestMapping(value="/")
 	public String showWelcome() {
-		return "test";
+		return "Admin/home";
 	}
 }

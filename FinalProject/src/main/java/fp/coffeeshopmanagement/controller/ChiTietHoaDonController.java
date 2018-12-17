@@ -13,12 +13,21 @@ import org.springframework.web.servlet.ModelAndView;
 import fp.coffeeshopmanagement.model.ChiTietHoaDon;
 import fp.coffeeshopmanagement.service.ChiTietHoaDonService;
 
+//import fp.coffeeshopmanagement.model.ChiTietHoaDon;
+//import fp.coffeeshopmanagement.service.ChiTietHoaDonService;
+
 @Controller
 @RequestMapping(value="/chitiethoadon")
 public class ChiTietHoaDonController {
 	@Autowired
 	ChiTietHoaDonService cthdService;
 	public int temp = -1;
+	
+//	@RequestMapping(value="/", method = RequestMethod.POST)
+//	public ModelAndView listAll()
+//	{
+//		ModelAndView = model 
+//	}
 
 	@RequestMapping(value="/list/{idHD}", method=RequestMethod.GET)
 	public ModelAndView list(@PathVariable int idHD) {

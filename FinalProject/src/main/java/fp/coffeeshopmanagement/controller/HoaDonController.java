@@ -18,7 +18,7 @@ import fp.coffeeshopmanagement.service.HoaDonService;
 public class HoaDonController {
 	@Autowired
 	HoaDonService hdService;
-
+	
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("hd_list");

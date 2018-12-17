@@ -11,7 +11,7 @@ import fp.coffeeshopmanagement.repository.NhanVienRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class NhanVienServiceImpl {
+public class NhanVienServiceImpl implements NhanVienService {
 	@Autowired
 	NhanVienRepository nhanvienRepository;
 
