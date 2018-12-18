@@ -1,20 +1,24 @@
 package fp.coffeeshopmanagement.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="nhacungcap")
 public class NhaCungCap {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="manhaccungcap")
+	@Column(name="manhacungcap")
 	private int iMaNhaCungCap;
+
+	@Column(name="tennhacungcap")
+	private String sTenNhaCungCap;
 	
+	@Column(name="diachi")
+	private String sDiaChi;
+	
+	@Column(name="sodienthoai")
+	private String sSoDienThoai;
+
 	public int getiMaNhaCungCap() {
 		return iMaNhaCungCap;
 	}
@@ -46,14 +50,4 @@ public class NhaCungCap {
 	public void setsSoDienThoai(String sSoDienThoai) {
 		this.sSoDienThoai = sSoDienThoai;
 	}
-
-	@Column(name="tennhacungcap")
-	private String sTenNhaCungCap;
-	
-	@Column(name="diachi")
-	private String sDiaChi;
-	
-	@Column(name="sodienthoai")
-	private String sSoDienThoai;
-	
 }	

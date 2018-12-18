@@ -2,6 +2,7 @@ package fp.coffeeshopmanagement.service;
 
 import java.util.List;
 
+import fp.coffeeshopmanagement.model.ChiTietNguyenLieuPK;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,9 +21,9 @@ public class ChiTietNguyenLieuServiceImpl implements ChiTietNguyenLieuService{
 //		return (List<ChiTietNguyenLieu>)ctnlRepository.findAll();
 //	}
 
-	public List<ChiTietNguyenLieu> getChiTietNguyenLieuById(int idThucUong) {
+	public List<ChiTietNguyenLieu> getChiTietNguyenLieuByIdThucUong(int idThucUong) {
 		// TODO Auto-generated method stub
-		return (List<ChiTietNguyenLieu>) ctnlRepository.findById(idThucUong).get();
+		return ctnlRepository.findAllByIdThucUong(idThucUong);
 	}
 
 	public void saveOrUpdate(ChiTietNguyenLieu ctnl) {

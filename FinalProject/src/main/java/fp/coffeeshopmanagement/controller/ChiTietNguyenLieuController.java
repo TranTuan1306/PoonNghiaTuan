@@ -22,7 +22,7 @@ public class ChiTietNguyenLieuController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list(@PathVariable int idThucUong) {
 		ModelAndView model = new ModelAndView("ctnl_list");
-		List<ChiTietNguyenLieu> ctnlList = ctnlService.getChiTietNguyenLieuById(idThucUong);
+		List<ChiTietNguyenLieu> ctnlList = ctnlService.getChiTietNguyenLieuByIdThucUong(idThucUong);
 		model.addObject("ctnlList", ctnlList);
 
 		return model;

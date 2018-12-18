@@ -2,17 +2,7 @@ package fp.coffeeshopmanagement.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="hopdongcungcapnguyenlieu")
@@ -24,12 +14,14 @@ public class HopDongCungCapNguyenLieu {
 	
 	@Column(name="ngaycungcap")
 	private Date dNgayCungCap = new Date();
-	
-	@Column(name="manhacungcap")
-	private int iMaNhaCungCap;
-	
-	@Column(name="manhanvien")
-	private int iMaNhanVien;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "manhacungcap")
+	private NhaCungCap iMaNhaCungCap;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "manv")
+	private NhanVien iMaNhanVien;
 
 	public int getiMaHopDong() {
 		return iMaHopDong;
@@ -47,23 +39,20 @@ public class HopDongCungCapNguyenLieu {
 //		this.dNgayCungCap = dNgayCungCap;
 //	}
 
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhaCungCap.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="manhacungcap", foreignKey = @ForeignKey(name="fk_hopdongcungcapnguyenlieu_nhacungcap"))
-	public int getiMaNhaCungCap() {
+
+	public NhaCungCap getiMaNhaCungCap() {
 		return iMaNhaCungCap;
 	}
 
-	public void setiMaNhaCungCap(int iMaNhaCungCap) {
+	public void setiMaNhaCungCap(NhaCungCap iMaNhaCungCap) {
 		this.iMaNhaCungCap = iMaNhaCungCap;
 	}
-	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhanVien.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="manhanvien", foreignKey = @ForeignKey(name="fk_hopdongcungcapnguyenlieu_nhanvien"))
-	public int getiMaNhanVien() {
+
+	public NhanVien getiMaNhanVien() {
 		return iMaNhanVien;
 	}
 
-	public void setiMaNhanVien(int iMaNhanVien) {
+	public void setiMaNhanVien(NhanVien iMaNhanVien) {
 		this.iMaNhanVien = iMaNhanVien;
 	}
 
@@ -72,5 +61,7 @@ public class HopDongCungCapNguyenLieu {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	public HopDongCungCapNguyenLieu(int iMaHopDong){
+		this.iMaHopDong = iMaHopDong;
+	}
 }

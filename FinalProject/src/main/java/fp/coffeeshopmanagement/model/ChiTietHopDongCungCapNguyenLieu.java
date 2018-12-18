@@ -10,30 +10,29 @@ public class ChiTietHopDongCungCapNguyenLieu {
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="mahopdong")
-	private int iMaHopDong;
+	private HopDongCungCapNguyenLieu iMaHopDong;
 	
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="manguyenlieu")
-	private int iMaNguyenLieu;
+	private NguyenLieu iMaNguyenLieu;
 	
 	@Column(name="soluong")
 	private int iSoLuong;
 
-	public int getiMaHopDong() {
+	public HopDongCungCapNguyenLieu getiMaHopDong() {
 		return iMaHopDong;
 	}
 
-	public void setiMaHopDong(int iMaHopDong) {
+	public void setiMaHopDong(HopDongCungCapNguyenLieu iMaHopDong) {
 		this.iMaHopDong = iMaHopDong;
 	}
 
-
-	public int getiMaNguyenLieu() {
+	public NguyenLieu getiMaNguyenLieu() {
 		return iMaNguyenLieu;
 	}
 
-	public void setiMaNguyenLieu(int iMaNguyenLieu) {
+	public void setiMaNguyenLieu(NguyenLieu iMaNguyenLieu) {
 		this.iMaNguyenLieu = iMaNguyenLieu;
 	}
 

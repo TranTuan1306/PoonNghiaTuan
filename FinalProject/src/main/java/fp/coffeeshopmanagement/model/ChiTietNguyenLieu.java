@@ -1,7 +1,7 @@
 package fp.coffeeshopmanagement.model;
 
-
 import javax.persistence.*;
+
 @Entity
 @Table(name="chitietnguyenlieu")
 @IdClass(ChiTietNguyenLieuPK.class)
@@ -9,27 +9,26 @@ public class ChiTietNguyenLieu{
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="mathucuong")
-	private int iMaThucUong;
+	private ThucUong iMaThucUong;
 	
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="manguyenlieu")
-	private int iMaNguyenLieu;
+	private NguyenLieu iMaNguyenLieu;
 
-	public int getiMaThucUong() {
+	public ThucUong getiMaThucUong() {
 		return iMaThucUong;
 	}
 
-	public void setiMaThucUong(int iMaThucUong) {
+	public void setiMaThucUong(ThucUong iMaThucUong) {
 		this.iMaThucUong = iMaThucUong;
 	}
 
-
-	public int getiMaNguyenLieu() {
+	public NguyenLieu getiMaNguyenLieu() {
 		return iMaNguyenLieu;
 	}
 
-	public void setiMaNguyenLieu(int iMaNguyenLieu) {
+	public void setiMaNguyenLieu(NguyenLieu iMaNguyenLieu) {
 		this.iMaNguyenLieu = iMaNguyenLieu;
 	}
 
