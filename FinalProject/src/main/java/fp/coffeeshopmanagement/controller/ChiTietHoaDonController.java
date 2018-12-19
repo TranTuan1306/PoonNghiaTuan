@@ -2,6 +2,7 @@ package fp.coffeeshopmanagement.controller;
 
 import java.util.List;
 
+import fp.coffeeshopmanagement.model.HoaDon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,7 +44,7 @@ public class ChiTietHoaDonController {
 
 	@RequestMapping(value="/savecthd", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cthdForm") ChiTietHoaDon cthd) {
-		cthd.setiMaHD(temp);
+		cthd.setiMaHD(new HoaDon(temp));
 		cthdService.saveOrUpdate(cthd);
 
 		return new ModelAndView("redirect:list/"+temp);

@@ -14,14 +14,14 @@
 <title>SB Admin - Login</title>
 
 <!-- Bootstrap core CSS-->
-<link href="../Templates/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/templates/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom fonts for this template-->
-<link href="../Templates/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+<link href="/templates/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
 	type="text/css">
 
 <!-- Custom styles for this template-->
-<link href="../Templates/css/sb-admin.css" rel="stylesheet">
+<link href="/templates/css/sb-admin.css" rel="stylesheet">
 
 </head>
 <body class="bg-dark">

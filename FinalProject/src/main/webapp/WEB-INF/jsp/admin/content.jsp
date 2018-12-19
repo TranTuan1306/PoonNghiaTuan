@@ -217,12 +217,12 @@
 	</p>
 
 	<!-- Script -->
-	<!-- <script src="Templates/vendor/jquery/jquery.min.js"></script>
-	<script src="Templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="Templates/vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script src="Templates/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="Templates/vendor/datatables/dataTables.bootstrap4.js"></script>
-	<script src="Templates/js/sb-admin.min.js"></script>
-	<script src="Templates/js/demo/datatables-demo.js"></script> -->
+	<!-- <script src="templates/vendor/jquery/jquery.min.js"></script>
+	<script src="templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="templates/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="templates/vendor/datatables/jquery.dataTables.js"></script>
+	<script src="templates/vendor/datatables/dataTables.bootstrap4.js"></script>
+	<script src="templates/js/sb-admin.min.js"></script>
+	<script src="templates/js/demo/datatables-demo.js"></script> -->
 </body>
 </html>
