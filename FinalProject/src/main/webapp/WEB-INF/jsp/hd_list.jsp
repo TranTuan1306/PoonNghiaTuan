@@ -29,9 +29,9 @@
      <tr>
       <td>${hd.iMaHD }</td>
       <td>${hd.dThoiDiem} </td>
-      <td>${hd.iMaKH }</td>
-      <td>${hd.iMaNV }</td>
-      <td>${hd.iLoaiHoaDon }
+      <td>${hd.iMaKH.iMaKhachHang }</td>
+      <td>${hd.iMaNV.iMaNV }</td>
+      <td>${hd.iLoaiHoaDon.iLoaiHoaDon }
       <td>
       <spring:url value="/chitiethoadon/list/${hd.iMaHD }" var="chitiethoadonURL" />
        <a class="btn btn-success" href="${chitiethoadonURL }" role="button" >Detail</a>

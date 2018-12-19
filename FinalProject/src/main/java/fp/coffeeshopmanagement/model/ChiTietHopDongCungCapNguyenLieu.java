@@ -8,12 +8,12 @@ import javax.persistence.*;
 @IdClass(ChiTietHopDongCungCapNguyenLieuPK.class)
 public class ChiTietHopDongCungCapNguyenLieu {
 	@Id
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name="mahopdong")
 	private HopDongCungCapNguyenLieu iMaHopDong;
 	
 	@Id
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name="manguyenlieu")
 	private NguyenLieu iMaNguyenLieu;
 	

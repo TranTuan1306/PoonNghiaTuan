@@ -1,7 +1,6 @@
 package fp.coffeeshopmanagement.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class ChiTietHoaDonPK implements Serializable{
 	/**

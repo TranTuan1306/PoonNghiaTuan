@@ -24,6 +24,7 @@ public class ChiTietHoaDonController {
 
 	@RequestMapping(value="/list/{idHD}", method=RequestMethod.GET)
 	public ModelAndView list(@PathVariable int idHD) {
+		if(!cthdService.isExistingHoaDon(idHD)) new ModelAndView("error");
 		temp = idHD;
 		ModelAndView model = new ModelAndView("cthd_list");
 		List<ChiTietHoaDon> cthdList = cthdService.getChiTietHoaDonById(idHD);

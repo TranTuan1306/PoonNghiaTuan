@@ -5,6 +5,8 @@ import java.util.List;
 import fp.coffeeshopmanagement.model.HoaDon;
 
 public interface HoaDonService {
+	boolean isExisting(int idHD);
+
 	List<HoaDon> getAllHoaDon();
 	
 	HoaDon getHoaDonById(int id);

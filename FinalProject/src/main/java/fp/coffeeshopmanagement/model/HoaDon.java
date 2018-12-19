@@ -16,16 +16,16 @@ public class HoaDon {
     @Column(name = "thoidiem")
     private Date dThoiDiem = new Date();
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "makhachhang")
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "makh")
     private KhachHang iMaKH;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REFRESH)
     @JoinColumn(name = "manv")
     private NhanVien iMaNV;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "maloaihoadon")
+    @ManyToOne(cascade = CascadeType.REFRESH)
+    @JoinColumn(name = "loaihoadon")
     private LoaiHoaDon iLoaiHoaDon;
 
     public int getiMaHD() {

@@ -19,7 +19,7 @@ public class ThucUong{
 	@Column(name="linkanh")
 	private String sLinkAnh;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "maloaithucuong")
 	private DanhMucThucUong iMaLoaiThucUong;
 	

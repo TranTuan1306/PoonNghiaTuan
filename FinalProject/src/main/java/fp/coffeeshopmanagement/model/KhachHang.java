@@ -19,7 +19,7 @@ public class KhachHang {
 	@Column(name="diachi")
 	private String sDiaChi;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "loaikhachhang")
 	private LoaiKhachHang iLoaiKhachHang;
 	

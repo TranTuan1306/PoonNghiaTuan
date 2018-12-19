@@ -36,7 +36,7 @@ public class NhanVien {
 	@Column(name="matkhau")
 	private String sMatKhau;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name = "macv")
 	private CongViec iMaCV;
 	

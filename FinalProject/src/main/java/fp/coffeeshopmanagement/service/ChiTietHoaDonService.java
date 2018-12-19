@@ -6,6 +6,7 @@ import fp.coffeeshopmanagement.model.HoaDon;
 
 public interface ChiTietHoaDonService {
 	//List<ChiTietHoaDon> getAllChiTietHoaDon();
+	boolean isExistingHoaDon(int idHD);
 
 	List<ChiTietHoaDon> getChiTietHoaDonById(int idHD);
 

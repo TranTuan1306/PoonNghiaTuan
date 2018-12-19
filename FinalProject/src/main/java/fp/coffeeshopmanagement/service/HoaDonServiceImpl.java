@@ -15,6 +15,10 @@ public class HoaDonServiceImpl implements HoaDonService{
 	@Autowired
 	HoaDonRepository hdRepository;
 
+	public boolean isExisting(int idHD) {
+		return hdRepository.existsById(idHD);
+	}
+
 	public List<HoaDon> getAllHoaDon() {
 		// TODO Auto-generated method stub
 		return (List<HoaDon>)hdRepository.findAll();
