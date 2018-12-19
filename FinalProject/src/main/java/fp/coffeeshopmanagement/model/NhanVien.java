@@ -1,4 +1,4 @@
-
+	
 package fp.coffeeshopmanagement.model;
 
 import java.util.Date;
@@ -6,8 +6,8 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
+//import javax.persistence.FetchType;
+//import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,8 +37,9 @@ public class NhanVien {
 	private String sDiaChi;
 	
 	@Column(name="ngaybatdau")
-
 	private Date dThoiDiem;
+	
+	//private Date dThoiDiem = new Date();
 	
 	@Column(name="luong")
 	private int iLuong;
@@ -49,8 +50,10 @@ public class NhanVien {
 	@Column(name="matkhau")
 	private String sMatKhau;
 	
-	@Column(name="macv")
-	private int iMaCV;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="macv")
+	private CongViec iMaCV;
 	
 	@Column(name="trangthai")
 	private boolean bTrangThai;
@@ -123,13 +126,13 @@ public class NhanVien {
 		this.sMatKhau = sMatKhau;
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhanVien.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="macv", foreignKey = @ForeignKey(name="fk_nhanvien_congviec"))
-	public int getiMaCV() {
+
+
+	public CongViec getiMaCV() {
 		return iMaCV;
 	}
 
-	public void setiMaCV(int iMaCV) {
+	public void setiMaCV(CongViec iMaCV) {
 		this.iMaCV = iMaCV;
 	}
 
@@ -139,8 +142,6 @@ public class NhanVien {
 
 	public void setbTrangThai(boolean bTrangThai) {
 		this.bTrangThai = bTrangThai;
-	}
-
-		
+	}		
 }
 

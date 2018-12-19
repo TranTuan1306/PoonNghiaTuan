@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import fp.coffeeshopmanagement.model.ChiTietHopDongCungCapNguyenLieu;
+//import fp.coffeeshopmanagement.model.HoaDon;
+import fp.coffeeshopmanagement.model.HopDongCungCapNguyenLieu;
 import fp.coffeeshopmanagement.service.ChiTietHopDongCungCapNguyenLieuService;
 
 @Controller
@@ -43,7 +45,7 @@ public class ChiTietHopDongCungCapNguyenLieuController {
 	
 	@RequestMapping(value="/savecthdccnl", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("cthdccnlForm") ChiTietHopDongCungCapNguyenLieu cthdccnl) {
-		cthdccnl.setiMaHopDong(temp);
+		cthdccnl.setiMaHopDong(new HopDongCungCapNguyenLieu(temp));
 		cthdccnlService.saveOrUpdate(cthdccnl);
 
 		return new ModelAndView("redirect:list/"+temp);

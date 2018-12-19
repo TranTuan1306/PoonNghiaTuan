@@ -5,11 +5,11 @@ import java.util.List;
 import fp.coffeeshopmanagement.model.ChiTietNguyenLieu;
 
 public interface ChiTietNguyenLieuService {
-//	public List<ChiTietNguyenLieu> getAllChiTietNguyenLieu();
+//	List<ChiTietNguyenLieu> getAllChiTietNguyenLieu();
 
-	public List<ChiTietNguyenLieu> getChiTietNguyenLieuById(int idThucUong);
+	List<ChiTietNguyenLieu> getChiTietNguyenLieuById(int idThucUong);
 
-	public void saveOrUpdate(ChiTietNguyenLieu ctnl);
+	void saveOrUpdate(ChiTietNguyenLieu ctnl);
 
-//	public void deleteChiTietNguyenLieu(int id);
+//	void deleteChiTietNguyenLieu(int id);
 }

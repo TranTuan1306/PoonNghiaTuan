@@ -3,8 +3,8 @@ package fp.coffeeshopmanagement.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
+//import javax.persistence.FetchType;
+//import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,8 +29,10 @@ public class ThucUong{
 	@Column(name="linkanh")
 	private String sLinkAnh;
 	
-	@Column(name="maloaithucuong")
-	private int iMaLoaiThucUong;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="maloaithucuong")
+	private DanhMucThucUong iMaLoaiThucUong;
 	
 	public int getiMaThucUong() {
 		return iMaThucUong;
@@ -64,16 +66,13 @@ public class ThucUong{
 		this.sLinkAnh = sLinkAnh;
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = DanhMucThucUong.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="maloaithucuong", foreignKey = @ForeignKey(name="fk_thucuong_danhmucthucuong"))
-	public int getiMaLoaiThucUong() {
+	public DanhMucThucUong getiMaLoaiThucUong() {
 		return iMaLoaiThucUong;
 	}
 
-	public void setiMaLoaiThucUong(int iMaLoaiThucUong) {
+	public void setiMaLoaiThucUong(DanhMucThucUong iMaLoaiThucUong) {
 		this.iMaLoaiThucUong = iMaLoaiThucUong;
 	}
-
 	
 	
 }

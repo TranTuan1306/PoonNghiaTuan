@@ -44,7 +44,7 @@
 						<td>${nv.iLuong }
 						<td>${nv.sTaiKhoan }
 						<td>${nv.sMatKhau }
-						<td>${nv.iMaCV }
+						<td>${nv.iMaCV.iMaCV }
 						<td>${nv.bTrangThai }
 						<td><spring:url
 								value="/nhanvien/updatenv/${nv.iMaNV }"

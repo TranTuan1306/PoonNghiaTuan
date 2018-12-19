@@ -6,8 +6,8 @@ import javax.persistence.CascadeType;
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
+//import javax.persistence.FetchType;
+//import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -33,8 +33,9 @@ public class KhachHang {
 	@Column(name="diachi")
 	private String sDiaChi;
 	
-	@Column(name="loaikhachhang")
-	private int iLoaiKhachHang;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="loaikhachhang")
+	private LoaiKhachHang iLoaiKhachHang;
 	
 	@Column(name="sodienthoai")
 	private int iSoDienThoai;
@@ -58,13 +59,11 @@ public class KhachHang {
 		this.sDiaChi = sDiaChi;
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = LoaiKhachHang.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="loaikhachhang", foreignKey = @ForeignKey(name="fk_khachhang_loaikhachhang"))
-	public int getiLoaiKhachHang() {
+	public LoaiKhachHang getiLoaiKhachHang() {
 		return iLoaiKhachHang;
 	}
 
-	public void setiLoaiKhachHang(int iLoaiKhachHang) {
+	public void setiLoaiKhachHang(LoaiKhachHang iLoaiKhachHang) {
 		this.iLoaiKhachHang = iLoaiKhachHang;
 	}
 

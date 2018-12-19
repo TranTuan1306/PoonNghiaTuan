@@ -6,8 +6,8 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
+//import javax.persistence.FetchType;
+//import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,14 +26,18 @@ public class HoaDon{
 	@Column(name="thoidiem")
 	private Date dThoiDiem = new Date();
 	
-	@Column(name="makh")
-	private int iMaKH;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="makh")
+	private KhachHang iMaKH;
 	
-	@Column(name="manv")
-	private int iMaNV;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="manv")
+	private NhanVien iMaNV;
 	
-	@Column(name="loaihoadon")
-	private int iLoaiHoaDon;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="loaihoadon")
+	private LoaiHoaDon iLoaiHoaDon;
 
 	public int getiMaHD() {
 		return iMaHD;
@@ -47,44 +51,45 @@ public class HoaDon{
 		return dThoiDiem;
 	}
 
-//	public void setdThoiDiem(Date dThoiDiem) {
-//		this.dThoiDiem = dThoiDiem;
-//	}
-//	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = KhachHang.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="makh", foreignKey = @ForeignKey(name="fk_hoadon_khachhang"))
-	public int getiMaKH() {
-		return iMaKH;
-	}
-
-	public void setiMaKH(int iMaKH) {
-		this.iMaKH = iMaKH;
+	public void setdThoiDiem(Date dThoiDiem) {
+		this.dThoiDiem = dThoiDiem;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhanVien.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="manv", foreignKey = @ForeignKey(name="fk_hoadon_nhanvien"))
-	public int getiMaNV() {
-		return iMaNV;
-	}
-
-	public void setiMaNV(int iMaNV) {
-		this.iMaNV = iMaNV;
-	}
-
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhanVien.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="loaihoadon", foreignKey = @ForeignKey(name="fk_hoadon_loaihoadon"))
-	public int getiLoaiHoaDon() {
-		return iLoaiHoaDon;
-	}
-
-	public void setiLoaiHoaDon(int iLoaiHoaDon) {
-		this.iLoaiHoaDon = iLoaiHoaDon;
-	}
 
 	public HoaDon() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+	public KhachHang getiMaKH() {
+		return iMaKH;
+	}
+
+	public void setiMaKH(KhachHang iMaKH) {
+		this.iMaKH = iMaKH;
+	}
+
+	public NhanVien getiMaNV() {
+		return iMaNV;
+	}
+
+	public void setiMaNV(NhanVien iMaNV) {
+		this.iMaNV = iMaNV;
+	}
+
+	public LoaiHoaDon getiLoaiHoaDon() {
+		return iLoaiHoaDon;
+	}
+
+	public void setiLoaiHoaDon(LoaiHoaDon iLoaiHoaDon) {
+		this.iLoaiHoaDon = iLoaiHoaDon;
+	}
+
+//	public void setdThoiDiem(Date dThoiDiem) {
+//		this.dThoiDiem = dThoiDiem;
+//	}
+
+	public HoaDon(int iMaHD) {
+		this.iMaHD = iMaHD;
+	}
 }

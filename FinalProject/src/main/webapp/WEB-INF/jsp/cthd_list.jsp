@@ -24,8 +24,8 @@
    <tbody>
     <c:forEach items="${cthdList }" var="cthd" >
      <tr>
-      <td>${cthd.iMaHD }</td>
-      <td>${cthd.iMaThucUong }</td>
+      <td>${cthd.iMaHD.iMaHD }</td>
+      <td>${cthd.iMaThucUong.iMaThucUong }</td>
       <td>${cthd.iSoLuong }</td>
      </tr>
     </c:forEach>

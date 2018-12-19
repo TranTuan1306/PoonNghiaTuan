@@ -1,12 +1,12 @@
-package fp.coffeeshopmanagement.model;
+	package fp.coffeeshopmanagement.model;
 
 import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
+//import javax.persistence.FetchType;
+//import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,11 +25,14 @@ public class HopDongCungCapNguyenLieu {
 	@Column(name="ngaycungcap")
 	private Date dNgayCungCap = new Date();
 	
-	@Column(name="manhacungcap")
-	private int iMaNhaCungCap;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="manhacungcap")
+	private NhaCungCap iMaNhaCungCap;
 	
-	@Column(name="manhanvien")
-	private int iMaNhanVien;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="manhanvien")
+	private NhanVien iMaNhanVien;
 
 	public int getiMaHopDong() {
 		return iMaHopDong;
@@ -46,31 +49,35 @@ public class HopDongCungCapNguyenLieu {
 //	public void setdNgayCungCap(Date dNgayCungCap) {
 //		this.dNgayCungCap = dNgayCungCap;
 //	}
-
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhaCungCap.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="manhacungcap", foreignKey = @ForeignKey(name="fk_hopdongcungcapnguyenlieu_nhacungcap"))
-	public int getiMaNhaCungCap() {
-		return iMaNhaCungCap;
-	}
-
-	public void setiMaNhaCungCap(int iMaNhaCungCap) {
-		this.iMaNhaCungCap = iMaNhaCungCap;
-	}
 	
-	@ManyToOne(cascade = CascadeType.ALL, targetEntity = NhanVien.class, fetch = FetchType.LAZY)
-	@JoinColumn(name="manhanvien", foreignKey = @ForeignKey(name="fk_hopdongcungcapnguyenlieu_nhanvien"))
-	public int getiMaNhanVien() {
-		return iMaNhanVien;
-	}
-
-	public void setiMaNhanVien(int iMaNhanVien) {
-		this.iMaNhanVien = iMaNhanVien;
-	}
+	
 
 	public HopDongCungCapNguyenLieu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	public NhaCungCap getiMaNhaCungCap() {
+		return iMaNhaCungCap;
+	}
+
+	public void setiMaNhaCungCap(NhaCungCap iMaNhaCungCap) {
+		this.iMaNhaCungCap = iMaNhaCungCap;
+	}
+
+	public NhanVien getiMaNhanVien() {
+		return iMaNhanVien;
+	}
+
+	public void setiMaNhanVien(NhanVien iMaNhanVien) {
+		this.iMaNhanVien = iMaNhanVien;
+	}
+
+	public void setdNgayCungCap(Date dNgayCungCap) {
+		this.dNgayCungCap = dNgayCungCap;
+	}
+
+	public HopDongCungCapNguyenLieu(int iMaHD) {
+		this.iMaHopDong = iMaHD;
+	}
 }
