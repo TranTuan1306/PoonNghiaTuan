@@ -1,6 +1,7 @@
 package fp.coffeeshopmanagement.model;
 
 import java.io.Serializable;
+//import java.util.Objects;
 
 public class ChiTietHoaDonPK implements Serializable{
 	/**
@@ -35,6 +36,7 @@ public class ChiTietHoaDonPK implements Serializable{
 		result = prime * result + iMaThucUong;
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

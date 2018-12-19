@@ -19,6 +19,7 @@
         <thead>
         <th scope="row">ID</th>
         <th scope="row">Tên công việc</th>
+         <th scope="row">Thao tác</th>
         </thead>
         <tbody>
         <c:forEach items="${cvList }" var="cv" >
@@ -28,8 +29,7 @@
                 <td>
                     <spring:url value="/congviec/updatecv/${cv.iMaCV }" var="updateURL" />
                     <a class="btn btn-primary" href="${updateURL }" role="button" >Update</a>
-                </td>
-                <td>
+                
                     <spring:url value="/congviec/deletecv/${cv.iMaCV }" var="deleteURL" />
                     <a class="btn btn-danger" href="${deleteURL }" role="button" >Delete</a>
                 </td>

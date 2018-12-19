@@ -11,7 +11,7 @@ import fp.coffeeshopmanagement.repository.ThucUongRepository;
 
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class ThucUongServiceImpl {
+public class ThucUongServiceImpl implements ThucUongService {
 	@Autowired
 	ThucUongRepository thucuongRepository;
 
