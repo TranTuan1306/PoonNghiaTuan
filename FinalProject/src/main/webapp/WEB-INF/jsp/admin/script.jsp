@@ -8,18 +8,18 @@
 </head>
 <body>
 	<!-- Bootstrap core JavaScript-->
-	<script src="/templates/vendor/jquery/jquery.min.js"></script>
-	<script src="/templates/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="/templates/js/jquery.min.js"></script>
+	<script src="/templates/js/bootstrap.bundle.min.js"></script>
 	<!-- Core plugin JavaScript-->
-	<script src="/templates/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="/templates/js/jquery.easing.min.js"></script>
 	<!-- Page level plugin JavaScript-->
-	<!-- <script src="templates/vendor/chart.js/Chart.min.js"></script> -->
-	<script src="/templates/vendor/datatables/jquery.dataTables.js"></script>
-	<script src="/templates/vendor/datatables/dataTables.bootstrap4.js"></script>
+	<!-- <script src="Templates/vendor/chart.js/Chart.min.js"></script> -->
+	<script src="/templates/js/jquery.dataTables.js"></script>
+	<script src="/templates/js/dataTables.bootstrap4.js"></script>
 	<!-- Custom scripts for all pages-->
 	<script src="/templates/js/sb-admin.min.js"></script>
 	<!-- Demo scripts for this page-->
-	<script src="/templates/js/demo/datatables-demo.js"></script>
-	<!-- <script src="templates/js/demo/chart-area-demo.js"></script> -->
+	<script src="/templates/js/datatables-demo.js"></script>
+	<!-- <script src="Templates/js/demo/chart-area-demo.js"></script> -->
 </body>
 </html>
