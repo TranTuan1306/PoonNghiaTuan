@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Content</title>
 </head>
 <body>
 	<div class="card mb-3">
 		<div class="card-header">
-			<i class="fas fa-table"></i> List Receipts
+			<i class="fas fa-table"></i> Danh Sách Hóa Đơn
 		</div>
 		<div class="card-body">
 			<div class="table-responsive">
@@ -23,15 +23,15 @@
 									<th class="sorting_asc" tabindex="0" aria-controls="dataTable"
 										rowspan="1" colspan="1" aria-sort="ascending"
 										aria-label="Name: activate to sort column descending"
-										style="width: 158px;">Name</th>
+										style="width: 158px;">Mã Hóa Đơn</th>
 									<th class="sorting" tabindex="0" aria-controls="dataTable"
 										rowspan="1" colspan="1"
 										aria-label="Position: activate to sort column ascending"
-										style="width: 269px;">Position</th>
+										style="width: 269px;">Thời Điểm</th>
 									<th class="sorting" tabindex="0" aria-controls="dataTable"
 										rowspan="1" colspan="1"
 										aria-label="Office: activate to sort column ascending"
-										style="width: 114px;">Office</th>
+										style="width: 114px;">Mã Khách Hàng</th>
 									<th class="sorting" tabindex="0" aria-controls="dataTable"
 										rowspan="1" colspan="1"
 										aria-label="Age: activate to sort column ascending"

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +37,16 @@
 		<!-- Thanh Slide Bar -->
 		<jsp:include page="slidebar.jsp"></jsp:include>
 		
-		<!-- Phần giữa -->
+		<!-- Phần Giữa -->
 		<div id="content-wrapper">
 			<div class="container-fluid">
-				<!-- Thanh Địa Chỉ  -->
+				<!-- Thanh Địa Chỉ  -->
 				<jsp:include page="thanhdiachi.jsp"></jsp:include>
 				
 				<!-- Nội Dung -->
-				<jsp:include page="content.jsp"></jsp:include>
+				<%-- <jsp:include page="content.jsp"></jsp:include> --%>
+				
+				
 								
 				<!-- Footer -->
 				<jsp:include page="footer.jsp"></jsp:include>

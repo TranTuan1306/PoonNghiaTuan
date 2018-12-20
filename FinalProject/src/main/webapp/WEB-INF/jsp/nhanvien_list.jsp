@@ -28,7 +28,7 @@
 				<th scope="row">Lương</th>
 				<th scope="row">Tài Khoản</th>
 				<th scope="row">Mật Khẩu</th>
-				<th scope="row">MaCV</th>
+				<th scope="row">Mã CV</th>
 				<th scope="row">Trạng Thái</th>
 				<th scope="row">Thao tác</th>
 			</thead>

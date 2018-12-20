@@ -34,7 +34,7 @@
 						<td>${kh.sHoTen}</td>
 						<td>${kh.sGioiTinh }</td>
 						<td>${kh.sDiaChi }</td>
-						<td>${kh.iLoaiKhachHang }
+						<td>${kh.iLoaiKhachHang.iLoaiKhachHang }
 						<td>${kh.iSoDienThoai }
 						<td>${kh.sThanhPho }
 						<td><spring:url

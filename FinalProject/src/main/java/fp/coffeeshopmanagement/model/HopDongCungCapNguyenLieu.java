@@ -25,12 +25,12 @@ public class HopDongCungCapNguyenLieu {
 	@Column(name="ngaycungcap")
 	private Date dNgayCungCap = new Date();
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name="manhacungcap")
 	private NhaCungCap iMaNhaCungCap;
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.REFRESH)
 	@JoinColumn(name="manhanvien")
 	private NhanVien iMaNhanVien;
 

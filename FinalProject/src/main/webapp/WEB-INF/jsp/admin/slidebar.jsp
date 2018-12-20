@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -29,52 +29,52 @@
 					class="dropdown-item" href="trangtrong.jsp">Blank Page</a>
 			</div></li> -->
 			
-		<!-- Hóa Đơn -->
+		<!-- HÃ³a ÄÆ¡n -->
 		<li class="nav-item active"><a class="nav-link" href="trangchu.jsp">
 				<i class="far fa-file-alt"></i><span> Manage Bills</span>
 		</a></li>
 			
-		<!-- Thức uống -->
+		<!-- Thá»©c uá»ng -->
 		<li class="nav-item"><a class="nav-link" href="charts.html">
 				<i class="fas fa-coffee"></i> <span>Manage Drinks</span>
 		</a></li>
 		
-		<!-- Nguyên Liệu -->
+		<!-- NguyÃªn Liá»u -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fas fa-box-open"></i> <span>Manage Resources</span>
 		</a></li>
 		
-		<!-- Nhà Cung Cấp -->
+		<!-- NhÃ  Cung Cáº¥p -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fas fa-shipping-fast"></i> <span>Manage Supplies</span>
 		</a></li>
 		
-		<!-- Nhân Viên -->
+		<!-- NhÃ¢n ViÃªn -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fas fa-oil-can"></i> <span>Manage Employees</span>
 		</a></li>
 		
-		<!-- Công Việc Của Nhân Viên -->
+		<!-- CÃ´ng Viá»c Cá»§a NhÃ¢n ViÃªn -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fab fa-empire"></i> <span>Manage Jobs</span>
 		</a></li>
 		
-		<!-- Danh Mục Thức Uống -->
+		<!-- Danh Má»¥c Thá»©c Uá»ng -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fa fa-list-alt"></i> <span>Drink Categories</span>
 		</a></li>
 		
-		<!-- Loại Hóa Đơn -->
+		<!-- Loáº¡i HÃ³a ÄÆ¡n -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fa fa-indent"></i> <span>Bill Categories</span>
 		</a></li>
 		
-		<!-- Khách Hàng -->
+		<!-- KhÃ¡ch HÃ ng -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="fas fa-user-tie"></i> <span>Manage Customers</span>
 		</a></li>
 		
-		<!-- Loại Khách Hàng -->
+		<!-- Loáº¡i KhÃ¡ch HÃ ng -->
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="far fa-snowflake"></i> <span>Customer Categories</span>
 		</a></li>

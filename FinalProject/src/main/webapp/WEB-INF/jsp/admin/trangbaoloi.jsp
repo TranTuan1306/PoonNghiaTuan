@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page isErrorPage="true" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,19 +37,19 @@
 		<!-- Thanh Slide Bar -->
 		<jsp:include page="slidebar.jsp"></jsp:include>
 
-		<!-- Phần giữa -->
+		<!-- Pháº§n giá»¯a -->
 		<div id="content-wrapper">
 			<div class="container-fluid">
-				<!-- Thanh Địa Chỉ  -->
+				<!-- Thanh Äá»a Chá»  -->
 				<jsp:include page="thanhdiachi.jsp"></jsp:include>
 				
-				<!-- Báo Lỗi -->
+				<!-- BÃ¡o Lá»i -->
 				<h1>404 ERROR</h1>
 				<p class="lead">
 					Page not found. You can <a href="javascript:history.back()">go
 						back</a> to the previous page, or <a href="trangchu.jsp">return home</a>.
 				</p>
-				<!-- End Báo Lỗi -->
+				<!-- End BÃ¡o Lá»i -->
 				
 				<!-- Footer -->
 				<jsp:include page="footer.jsp"></jsp:include>
@@ -56,7 +57,7 @@
 		</div>
 	</div>
 
-	<!-- Thanh cuộn lên trang đầu -->
+	<!-- Thanh cuá»n lÃªn trang Äáº§u -->
 	<a class="scroll-to-top rounded" href="#page-top"
 		style="display: inline;"> <i class="fas fa-angle-up"></i>
 	</a>
