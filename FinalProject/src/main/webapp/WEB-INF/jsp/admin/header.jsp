@@ -8,11 +8,8 @@
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin - Trang Chủ</title>
-
     <!-- Bootstrap core CSS-->
-    <link href="/templates/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../webjars/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom fonts for this template-->
     <link href="/templates/css/all.min.css" rel="stylesheet" type="text/css">
@@ -74,4 +71,3 @@
     <div id="content-wrapper">
         <div class="container-fluid">
             <!-- Thanh Địa Chỉ  -->
-<jsp:include page="thanhdiachi.jsp" />

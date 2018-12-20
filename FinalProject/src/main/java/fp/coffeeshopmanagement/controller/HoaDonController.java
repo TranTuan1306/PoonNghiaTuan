@@ -2,6 +2,12 @@ package fp.coffeeshopmanagement.controller;
 
 import java.util.List;
 
+import fp.coffeeshopmanagement.model.KhachHang;
+import fp.coffeeshopmanagement.model.LoaiHoaDon;
+import fp.coffeeshopmanagement.model.NhanVien;
+import fp.coffeeshopmanagement.service.KhachHangService;
+import fp.coffeeshopmanagement.service.LoaiHoaDonService;
+import fp.coffeeshopmanagement.service.NhanVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,26 +24,39 @@ import fp.coffeeshopmanagement.service.HoaDonService;
 public class HoaDonController {
 	@Autowired
 	HoaDonService hdService;
+	@Autowired
+	KhachHangService khService;
+	@Autowired
+	NhanVienService nvService;
+	@Autowired
+	LoaiHoaDonService lhdService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("hd_list");
 		List<HoaDon> hdList = hdService.getAllHoaDon();
 		model.addObject("hdList", hdList);
-
-		return model;
-	}
-
-	@RequestMapping(value="/addhd", method=RequestMethod.GET)
-	public ModelAndView addHoaDon() {
-		ModelAndView model = new ModelAndView();
-
-		HoaDon hd = new HoaDon();	
+		HoaDon hd = new HoaDon();
 		model.addObject("hdForm", hd);
-		model.setViewName("hd_form");
-
+		List<KhachHang> khList = khService.getAllKhachHang();
+		model.addObject("khList", khList);
+		List<NhanVien> nvList = nvService.getAllNhanVien();
+		model.addObject("nvList", nvList);
+		List<LoaiHoaDon> lhdList = lhdService.getAllLoaiHoaDon();
+		model.addObject("lhdList", lhdList);
 		return model;
 	}
+
+//	@RequestMapping(value="/addhd", method=RequestMethod.GET)
+//	public ModelAndView addHoaDon() {
+//		ModelAndView model = new ModelAndView();
+//
+//		HoaDon hd = new HoaDon();
+//		model.addObject("hdForm", hd);
+//		model.setViewName("hd_form");
+//
+//		return model;
+//	}
 
 
 	@RequestMapping(value="/updatehd/{id}", method=RequestMethod.GET)

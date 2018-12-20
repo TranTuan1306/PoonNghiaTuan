@@ -17,7 +17,7 @@
 <!-- Script -->
 <<!-- Bootstrap core JavaScript-->
 <script src="/templates/js/jquery.min.js"></script>
-<script src="/templates/js/bootstrap.bundle.min.js"></script>
+<script src="../webjars/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="/templates/js/jquery.easing.min.js"></script>
 <!-- Page level plugin JavaScript-->
