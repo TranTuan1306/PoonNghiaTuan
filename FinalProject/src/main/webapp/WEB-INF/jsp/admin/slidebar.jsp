@@ -68,5 +68,4 @@
 		<li class="nav-item"><a class="nav-link" href="tables.html">
 				<i class="far fa-snowflake"></i> <span>Customer Categories</span>
 		</a></li>
-		
 	</ul>

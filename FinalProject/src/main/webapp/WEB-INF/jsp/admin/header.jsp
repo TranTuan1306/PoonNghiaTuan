@@ -20,7 +20,7 @@
     <!-- Custom styles for this template-->
     <link href="/templates/css/sb-admin.css" rel="stylesheet">
 </head>
-<body>
+<body id="page-top">
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
     <a class="navbar-brand mr-1" href="/">Adminstrator</a>

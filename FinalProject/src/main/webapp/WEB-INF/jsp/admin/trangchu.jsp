@@ -36,7 +36,6 @@
     <div id="content-wrapper">
         <div class="container-fluid">
             <!-- Thanh ??a Ch?  -->
-            <jsp:include page="thanhdiachi.jsp"></jsp:include>
 
             <!-- N?i Dung -->
             <jsp:include page="content.jsp"></jsp:include>
@@ -53,6 +52,5 @@
 </a>
 
 <!-- Script -->
-<jsp:include page="script.jsp"></jsp:include>
 </body>
 </html>

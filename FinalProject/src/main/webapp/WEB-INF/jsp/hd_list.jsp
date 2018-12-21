@@ -13,6 +13,7 @@
     <li class="breadcrumb-item active">Hóa đơn</li>
 </ol>
 
+<spring:url value="/hoadon/savehd" var="saveURL"/>
 <div class="card mb-3">
     <div class="card-header">
         <i class="fas fa-table"></i> Danh sách hóa đơn
@@ -23,9 +24,10 @@
                 <table class="table table-bordered dataTable" id="dataTable"
                        role="grid"
                        aria-describedby="dataTable_info" style="width: 100%;">
-                    <spring:url value="/hoadon/addhd" var="addURL"/>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#addHoaDon" style="float:right;"><i
-                            class="fas fa-plus"></i> Thêm hóa đơn
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#HoaDon"
+                            onclick="document.getElementById('headermodal').innerHTML='Thêm hóa đơn mới';"
+                            style="float:right;">
+                        <i class="fas fa-plus"></i> Thêm hóa đơn
                     </button>
                     <thead>
                     <tr role="row" align="center">
@@ -77,12 +79,14 @@
                                 <spring:url value="/chitiethoadon/list/${hd.iMaHD }" var="chitiethoadonURL"/>
                                 <a class="btn btn-success fas fa-info" href="${chitiethoadonURL }" style="width: 50px;"
                                    role="button"></a>
-                                <spring:url value="/hoadon/updatehd/${hd.iMaHD }" var="updateURL"/>
-                                <a class="btn btn-primary fas fa-pen " href="${updateURL }" style="width: 50px;"
-                                   role="button"></a>
+                                <a class="btn btn-primary fas fa-pen" href="#" id="updatebutton"
+                                   onclick="document.getElementById('headermodal').innerHTML='Sửa hóa đơn số #${hd.iMaHD}';
+                                           document.getElementById('iMaHD').value = ${hd.iMaHD};"
+                                   data-toggle="modal" data-target="#HoaDon" style="width: 50px;" role="button"></a>
                                 <spring:url value="/hoadon/deletehd/${hd.iMaHD }" var="deleteURL"/>
-                                <a class="btn btn-danger fas fa-trash" href="${deleteURL }" style="width: 50px;"
-                                   role="button"></a>
+                                <a class="btn btn-danger fas fa-trash" href="${deleteURL }"
+                                   onclick="return confirm('Bạn có chắc xóa hóa đơn số #${hd.iMaHD}?')"
+                                   style="width: 50px;" role="button"></a>
                             </td>
                         </tr>
                     </c:forEach>
@@ -94,14 +98,14 @@
 </div>
 
 
-<!-- Modal -->
-<div id="addHoaDon" class="modal fade" role="dialog">
+<!-- Modal thêm Hóa Đơn-->
+<div id="HoaDon" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="text-dark text-justify">Thêm hóa đơn mới</h4>
+                <h2 class="text-dark text-justify" id="headermodal"></h2>
                 <i class="close fas fa-window-close" data-dismiss="modal"></i>
             </div>
 
@@ -109,9 +113,8 @@
 
                 <spring:url value="/hoadon/savehd" var="saveURL"/>
                 <form:form modelAttribute="hdForm" method="post" action="${saveURL }" cssClass="form">
-                    <form:hidden path="iMaHD"/>
+                    <form:hidden path="iMaHD" id="iMaHD"/>
                     <form:hidden path="dThoiDiem"/>
-
 
                     <div class="form-group">
                         <label><i class="fas fa-user"></i> Khách hàng</label>
@@ -149,7 +152,8 @@
                         </form:select>
                     </div>
 
-                    <button href="saveURL" type="submit" class="btn btn-primary" style="float: right;">
+                    <button href="saveURL" type="submit" class="btn btn-primary" style="float: right;"
+                    onclick="return confirm('Bạn có chắc chắn sửa hóa đơn này?')">
                         <i class="fas fa-save"></i> Lưu
                     </button>
                 </form:form>
@@ -160,7 +164,6 @@
 
     </div>
 </div>
-
 
 <div class="card-footer small text-muted">Updated yesterday at
     11:59 PM

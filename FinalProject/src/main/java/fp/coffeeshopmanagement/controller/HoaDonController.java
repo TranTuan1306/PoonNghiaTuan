@@ -31,7 +31,7 @@ public class HoaDonController {
 	@Autowired
 	LoaiHoaDonService lhdService;
 	
-	@RequestMapping(value="/", method=RequestMethod.GET)
+	@RequestMapping(value="", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("hd_list");
 		List<HoaDon> hdList = hdService.getAllHoaDon();
@@ -74,13 +74,13 @@ public class HoaDonController {
 	public ModelAndView save(@ModelAttribute("hdForm") HoaDon hd) {
 		hdService.saveOrUpdate(hd);
 
-		return new ModelAndView("redirect:/hoadon/list");
+		return new ModelAndView("redirect:/hoadon/");
 	}
 
 	@RequestMapping(value="/deletehd/{id}", method=RequestMethod.GET)
 	public ModelAndView delete(@PathVariable("id") int id) {
 		hdService.deleteHoaDon(id);
 
-		return new ModelAndView("redirect:/hoadon/list");
+		return new ModelAndView("redirect:/hoadon/");
 	}
 }

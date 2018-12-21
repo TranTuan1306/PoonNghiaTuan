@@ -15,7 +15,7 @@
 </a>
 
 <!-- Script -->
-<<!-- Bootstrap core JavaScript-->
+<!-- Bootstrap core JavaScript-->
 <script src="/templates/js/jquery.min.js"></script>
 <script src="../webjars/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 <!-- Core plugin JavaScript-->

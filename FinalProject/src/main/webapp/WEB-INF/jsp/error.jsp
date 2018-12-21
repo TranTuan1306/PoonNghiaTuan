@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>404 HTML Tempalte by Colorlib</title>
+    <title>Lỗi</title>
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900" rel="stylesheet">
@@ -34,7 +34,7 @@
         </div>
         <h2>Error</h2>
         <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable.</p>
-        <a href="#">Go To Homepage</a>
+        <a href="/login">Go To Homepage</a>
     </div>
 </div>
 
