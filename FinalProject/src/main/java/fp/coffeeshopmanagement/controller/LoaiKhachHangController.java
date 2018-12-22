@@ -19,9 +19,14 @@ public class LoaiKhachHangController {
 	@Autowired
     LoaiKhachHangService loaikhachhangService;
 	
-	@RequestMapping(value="/list", method= RequestMethod.GET)
+	@RequestMapping(value="/", method= RequestMethod.GET)
     public ModelAndView list() {
+		
         ModelAndView model = new ModelAndView("loaikhachhang_list");
+        
+        LoaiKhachHang loaikhachhang = new LoaiKhachHang();
+        model.addObject("loaikhachhangForm",loaikhachhang);
+        
         List<LoaiKhachHang> loaikhachhangList = loaikhachhangService.getAllLoaiKhachHang();
         model.addObject("loaikhachhangList", loaikhachhangList);
 
@@ -54,13 +59,13 @@ public class LoaiKhachHangController {
     public ModelAndView save(@ModelAttribute("loaikhachhangForm") LoaiKhachHang loaikhachhang) {
 		loaikhachhangService.saveOrUpdate(loaikhachhang);
 
-        return new ModelAndView("redirect:/loaikhachhang/list");
+        return new ModelAndView("redirect:/loaikhachhang/");
     }
 
     @RequestMapping(value="/deleteloaikhachhang/{id}", method=RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") int id) {
     	loaikhachhangService.deleteLoaiKhachHang(id);
 
-        return new ModelAndView("redirect:/loaikhachhang/list");
+        return new ModelAndView("redirect:/loaikhachhang/");
     }
 }

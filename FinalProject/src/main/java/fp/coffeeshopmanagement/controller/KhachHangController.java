@@ -11,17 +11,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import fp.coffeeshopmanagement.model.KhachHang;
+import fp.coffeeshopmanagement.model.LoaiKhachHang;
 import fp.coffeeshopmanagement.service.KhachHangService;
+import fp.coffeeshopmanagement.service.LoaiKhachHangService;
 
 @Controller
 @RequestMapping(value="/khachhang")
 public class KhachHangController {
 	@Autowired
 	KhachHangService khachhangService;
+	@Autowired 
+	LoaiKhachHangService loaikhachhangService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
+		
 		ModelAndView model = new ModelAndView("khachhang_list");
+		
+		//Loại Khách Hàng
+		KhachHang khachhang = new KhachHang();
+		model.addObject("khForm",khachhang);
+		
+		List<LoaiKhachHang> lkhList = loaikhachhangService.getAllLoaiKhachHang();
+		model.addObject("lkhList",lkhList);
+		
 		List<KhachHang> khList = khachhangService.getAllKhachHang();
 		model.addObject("khList", khList);
 
@@ -54,13 +67,13 @@ public class KhachHangController {
 	public ModelAndView delete(@PathVariable("id") int id) {
 		khachhangService.deleteKhachHang(id);
 
-		return new ModelAndView("redirect:/khachhang/list");
+		return new ModelAndView("redirect:/khachhang/");
 	}
 	
 	@RequestMapping(value="/savekh", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("khForm") KhachHang kh) {
 		khachhangService.saveOrUpdate(kh);
 
-		return new ModelAndView("redirect:/khachhang/list");
+		return new ModelAndView("redirect:/khachhang/");
 	}
 }

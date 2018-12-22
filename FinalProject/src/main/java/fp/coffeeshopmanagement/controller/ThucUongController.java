@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import fp.coffeeshopmanagement.model.DanhMucThucUong;
 import fp.coffeeshopmanagement.model.ThucUong;
-
+import fp.coffeeshopmanagement.service.DanhMucThucUongService;
 import fp.coffeeshopmanagement.service.ThucUongService;
 
 @Controller
@@ -20,17 +20,29 @@ import fp.coffeeshopmanagement.service.ThucUongService;
 public class ThucUongController {
 	@Autowired
 	ThucUongService thucuongService;
+	@Autowired 
+	DanhMucThucUongService danhmucthucuongService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
+		
 		ModelAndView model = new ModelAndView("thucuong_list");
+		
+		//Thức Uống
 		List<ThucUong> thucuongList = thucuongService.getAllThucUong();
 		model.addObject("thucuongList", thucuongList);
+		
+		ThucUong thucuong= new ThucUong();
+		model.addObject("thucuongForm",thucuong);
+		
+		//Danh Mục Thức Uống
+		List<DanhMucThucUong> danhmucthucuongList = danhmucthucuongService.getAllDanhMucThucUong();
+		model.addObject("danhmucthucuongList",danhmucthucuongList);
 
 		return model;
 	}
 	
-	@RequestMapping(value="/addthucuong", method=RequestMethod.GET)
+	/*@RequestMapping(value="/addthucuong", method=RequestMethod.GET)
 	public ModelAndView addThucUong() {
 		ModelAndView model = new ModelAndView();
 
@@ -39,7 +51,7 @@ public class ThucUongController {
 		model.setViewName("thucuong_form");
 
 		return model;
-	}
+	}*/
 	
 	@RequestMapping(value="/updatethucuong/{id}", method=RequestMethod.GET)
 	public ModelAndView editThucUong(@PathVariable int id) {
@@ -56,13 +68,13 @@ public class ThucUongController {
 	public ModelAndView delete(@PathVariable("id") int id) {
 		thucuongService.deleteThucUong(id);
 
-		return new ModelAndView("redirect:/thucuong/list");
+		return new ModelAndView("redirect:/thucuong/");
 	}
 	
 	@RequestMapping(value="/savethucuong", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("thucuongForm") ThucUong thucuong) {
 		thucuongService.saveOrUpdate(thucuong);
 
-		return new ModelAndView("redirect:/thucuong/list");
+		return new ModelAndView("redirect:/thucuong/");
 	}
 }

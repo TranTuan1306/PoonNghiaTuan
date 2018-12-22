@@ -19,9 +19,13 @@ public class NguyenLieuController {
 	@Autowired
 	NguyenLieuService nguyenlieuService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("nguyenlieu_list");
+		
+		NguyenLieu nguyenlieu = new NguyenLieu();
+		model.addObject("nguyenlieuForm",nguyenlieu);
+		
 		List<NguyenLieu> nguyenlieuList = nguyenlieuService.getAllNguyenLieu();
 		model.addObject("nguyenlieuList", nguyenlieuList);
 
@@ -54,13 +58,13 @@ public class NguyenLieuController {
 	public ModelAndView delete(@PathVariable("id") int id) {
 		nguyenlieuService.deleteNguyenLieu(id);
 
-		return new ModelAndView("redirect:/nguyenlieu/list");
+		return new ModelAndView("redirect:/nguyenlieu/");
 	}
 	
 	@RequestMapping(value="/savenguyenlieu", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("nguyenlieuForm") NguyenLieu nguyenlieu) {
 		nguyenlieuService.saveOrUpdate(nguyenlieu);
 
-		return new ModelAndView("redirect:/nguyenlieu/list");
+		return new ModelAndView("redirect:/nguyenlieu/");
 	}
 }

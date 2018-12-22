@@ -51,9 +51,9 @@ public class HoaDon{
 		return dThoiDiem;
 	}
 
-	public void setdThoiDiem(Date dThoiDiem) {
+	/*public void setdThoiDiem(Date dThoiDiem) {
 		this.dThoiDiem = dThoiDiem;
-	}
+	}*/
 	
 
 	public HoaDon() {

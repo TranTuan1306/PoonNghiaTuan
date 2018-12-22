@@ -30,52 +30,52 @@
 			</div></li> -->
 			
 		<!-- HÃ³a ÄÆ¡n -->
-		<li class="nav-item active"><a class="nav-link" href="trangchu.jsp">
+		<li class="nav-item"><a class="nav-link" href="/hoadon/">
 				<i class="far fa-file-alt"></i><span> Manage Bills</span>
 		</a></li>
 			
 		<!-- Thá»©c uá»ng -->
-		<li class="nav-item"><a class="nav-link" href="charts.html">
+		<li class="nav-item"><a class="nav-link" href="/thucuong/">
 				<i class="fas fa-coffee"></i> <span>Manage Drinks</span>
 		</a></li>
 		
 		<!-- NguyÃªn Liá»u -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/nguyenlieu/">
 				<i class="fas fa-box-open"></i> <span>Manage Resources</span>
 		</a></li>
 		
 		<!-- NhÃ  Cung Cáº¥p -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/nhacungcap/">
 				<i class="fas fa-shipping-fast"></i> <span>Manage Supplies</span>
 		</a></li>
 		
 		<!-- NhÃ¢n ViÃªn -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/nhanvien/">
 				<i class="fas fa-oil-can"></i> <span>Manage Employees</span>
 		</a></li>
 		
 		<!-- CÃ´ng Viá»c Cá»§a NhÃ¢n ViÃªn -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/congviec/">
 				<i class="fab fa-empire"></i> <span>Manage Jobs</span>
 		</a></li>
 		
 		<!-- Danh Má»¥c Thá»©c Uá»ng -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/danhmucthucuong/">
 				<i class="fa fa-list-alt"></i> <span>Drink Categories</span>
 		</a></li>
 		
 		<!-- Loáº¡i HÃ³a ÄÆ¡n -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/loaihoadon/">
 				<i class="fa fa-indent"></i> <span>Bill Categories</span>
 		</a></li>
 		
 		<!-- KhÃ¡ch HÃ ng -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/khachhang/">
 				<i class="fas fa-user-tie"></i> <span>Manage Customers</span>
 		</a></li>
 		
 		<!-- Loáº¡i KhÃ¡ch HÃ ng -->
-		<li class="nav-item"><a class="nav-link" href="tables.html">
+		<li class="nav-item"><a class="nav-link" href="/loaikhachhang/">
 				<i class="far fa-snowflake"></i> <span>Customer Categories</span>
 		</a></li>
 		

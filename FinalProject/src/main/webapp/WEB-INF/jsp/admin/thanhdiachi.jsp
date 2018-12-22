@@ -8,8 +8,7 @@
 </head>
 <body>
 	<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
-		<li class="breadcrumb-item active">Hóa Đơn</li>
+		<li class="breadcrumb-item"><a href="/">Trang Chủ</a></li>
 	</ol>
 </body>
 </html>

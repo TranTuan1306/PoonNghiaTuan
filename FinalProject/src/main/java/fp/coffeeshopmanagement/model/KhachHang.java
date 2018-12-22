@@ -34,8 +34,8 @@ public class KhachHang {
 	private String sDiaChi;
 	
 	@ManyToOne(cascade = CascadeType.REFRESH)
-	@JoinColumn(name="loaikhachhang")
-	private LoaiKhachHang iLoaiKhachHang;
+	@JoinColumn(name="maloaikhachhang")
+	private LoaiKhachHang iMaLoaiKhachHang;
 	
 	@Column(name="sodienthoai")
 	private int iSoDienThoai;
@@ -59,12 +59,12 @@ public class KhachHang {
 		this.sDiaChi = sDiaChi;
 	}
 
-	public LoaiKhachHang getiLoaiKhachHang() {
-		return iLoaiKhachHang;
+	public LoaiKhachHang getiMaLoaiKhachHang() {
+		return iMaLoaiKhachHang;
 	}
 
-	public void setiLoaiKhachHang(LoaiKhachHang iLoaiKhachHang) {
-		this.iLoaiKhachHang = iLoaiKhachHang;
+	public void setiMaLoaiKhachHang(LoaiKhachHang iLoaiKhachHang) {
+		this.iMaLoaiKhachHang = iLoaiKhachHang;
 	}
 
 	public int getiSoDienThoai() {

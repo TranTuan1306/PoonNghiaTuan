@@ -19,16 +19,19 @@ public class LoaiHoaDonController {
 	@Autowired
     LoaiHoaDonService loaihoadonService;
 	
-	@RequestMapping(value="/list", method= RequestMethod.GET)
+	@RequestMapping(value="/", method= RequestMethod.GET)
     public ModelAndView list() {
         ModelAndView model = new ModelAndView("loaihoadon_list");
         List<LoaiHoaDon> loaihoadonList = loaihoadonService.getAllLoaiHoaDon();
         model.addObject("loaihoadonList", loaihoadonList);
+        
+        LoaiHoaDon loaihoadon = new LoaiHoaDon();
+        model.addObject("loaihoadonForm", loaihoadon);
 
         return model;
     }
 	
-	@RequestMapping(value="/addloaihoadon", method=RequestMethod.GET)
+	/*@RequestMapping(value="/addloaihoadon", method=RequestMethod.GET)
     public ModelAndView addLoaiHoaDon() {
         ModelAndView model = new ModelAndView();
 
@@ -37,7 +40,7 @@ public class LoaiHoaDonController {
         model.setViewName("loaihoadon_form");
 
         return model;
-    }
+    }*/
 	
 	@RequestMapping(value="/updateloaihoadon/{id}", method=RequestMethod.GET)
     public ModelAndView editLoaiHoaDon(@PathVariable int id) {
@@ -54,13 +57,13 @@ public class LoaiHoaDonController {
     public ModelAndView save(@ModelAttribute("loaihoadonForm") LoaiHoaDon loaihoadon) {
         loaihoadonService.saveOrUpdate(loaihoadon);
 
-        return new ModelAndView("redirect:/loaihoadon/list");
+        return new ModelAndView("redirect:/loaihoadon/");
     }
 
     @RequestMapping(value="/deleteloaihoadon/{id}", method=RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") int id) {
     	loaihoadonService.deleteLoaiHoaDon(id);
 
-        return new ModelAndView("redirect:/loaihoadon/list");
+        return new ModelAndView("redirect:/loaihoadon/");
     }
 }

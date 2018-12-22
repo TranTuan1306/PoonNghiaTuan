@@ -19,9 +19,14 @@ public class NhaCungCapController {
 	@Autowired
 	NhaCungCapService nhacungcapService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("nhacungcap_list");
+		
+		
+		NhaCungCap nhacungcap = new NhaCungCap();
+		model.addObject("nhacungcapForm",nhacungcap);
+		
 		List<NhaCungCap> nhacungcapList = nhacungcapService.getAllNhaCungCap();
 		model.addObject("nhacungcapList", nhacungcapList);
 
@@ -54,13 +59,13 @@ public class NhaCungCapController {
 	public ModelAndView delete(@PathVariable("id") int id) {
 		nhacungcapService.deleteNhaCungCap(id);
 
-		return new ModelAndView("redirect:/nhacungcap/list");
+		return new ModelAndView("redirect:/nhacungcap/");
 	}
 	
 	@RequestMapping(value="/savenhacungcap", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("nhacungcapForm") NhaCungCap nhacungcap) {
 		nhacungcapService.saveOrUpdate(nhacungcap);
 
-		return new ModelAndView("redirect:/nhacungcap/list");
+		return new ModelAndView("redirect:/nhacungcap/");
 	}
 }

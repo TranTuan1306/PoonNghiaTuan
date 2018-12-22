@@ -7,7 +7,7 @@
 <body>
 	<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-		<a class="navbar-brand mr-1" href="trangchu.jsp">Adminstrator</a>
+		<a class="navbar-brand mr-1" href="/">Adminstrator</a>
 
 		<button class="btn btn-link btn-sm text-white order-1 order-sm-0"
 			id="sidebarToggle">
@@ -40,7 +40,7 @@
 					<!-- <a class="dropdown-item" href="#">Settings</a> <a
 						class="dropdown-item" href="#">Activity Log</a>
 					<div class="dropdown-divider"></div> -->
-					<a class="dropdown-item" href="#" data-toggle="modal"
+					<a class="dropdown-item" href="login.jsp" data-toggle="modal"
 						data-target="#logoutModal">Logout</a>
 				</div></li>
 		</ul>

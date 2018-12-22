@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import fp.coffeeshopmanagement.model.CongViec;
 import fp.coffeeshopmanagement.model.NhanVien;
+import fp.coffeeshopmanagement.service.CongViecService;
 import fp.coffeeshopmanagement.service.NhanVienService;
 
 @Controller
@@ -19,11 +21,22 @@ public class NhanVienController {
 	@Autowired
 	NhanVienService nhanvienService;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@Autowired
+	CongViecService congviecService;
+	
+	
+	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView list() {
 		ModelAndView model = new ModelAndView("nhanvien_list");
+		
+		NhanVien nhanvien = new NhanVien();
+		model.addObject("nhanvienForm",nhanvien);
+		
 		List<NhanVien> nvList = nhanvienService.getAllNhanVien();
 		model.addObject("nvList", nvList);
+		
+		List<CongViec> cvList = congviecService.getAllCongViec();
+		model.addObject("cvList",cvList);
 
 		return model;
 	}
@@ -54,13 +67,13 @@ public class NhanVienController {
 	public ModelAndView delete(@PathVariable("id") int id) {
 		nhanvienService.deleteNhanVien(id);
 
-		return new ModelAndView("redirect:/nhanvien/list");
+		return new ModelAndView("redirect:/nhanvien/");
 	}
 	
 	@RequestMapping(value="/savenv", method=RequestMethod.POST)
 	public ModelAndView save(@ModelAttribute("nvForm") NhanVien nv) {
 		nhanvienService.saveOrUpdate(nv);
 
-		return new ModelAndView("redirect:/nhanvien/list");
+		return new ModelAndView("redirect:/nhanvien/");
 	}
 }
